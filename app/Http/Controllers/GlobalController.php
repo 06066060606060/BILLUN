@@ -16,5 +16,11 @@ class GlobalController extends Controller
         return view('index');
     }
 
-
+    static function getUsers()
+    {
+        //retrive all users
+        $users = User::all();
+        return $users;
+    }
+    
 }
