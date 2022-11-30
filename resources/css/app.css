@@ -1,0 +1,168 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Satoshi', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  
+  .sidebar .nav{
+    @apply border-opacity-30 rounded-lg p-4 bg-gray-900  !important;
+}
+  
+  .myshadowDark {
+    text-shadow: 2px 2px 2px #00000097;
+  }
+  
+  .myshadowLight {
+    text-shadow: 2px 2px 4px #ffffff;
+  }
+  
+  :root {
+    --bg-color: #2F42EB;
+  }
+  
+  .mycolor{
+    background: rgb(115,122,255);
+    background: linear-gradient(90deg, rgba(115,122,255,1) 0%, rgba(47,66,235,1) 100%);
+  }
+  
+  .mycolor:active {
+    background: rgba(47,66,235,1);
+    background: linear-gradient(90deg,rgba(47,66,235,1)  0%, rgba(115,122,255,1) 100%);
+  }
+  
+  [x-cloak] {
+    display: none;
+  }
+  
+  [v-cloak] {
+    display: none;
+  }
+  
+  img{
+    user-select: none;
+  }
+
+  
+.cropped{
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  padding-bottom: 5px;
+
+}
+
+  .mypurple {
+      background-color: #6002E9;
+      background-color: linear-gradient(90deg, #6002E9 0%, #a455f8 100%);
+  }
+
+
+  .myblob {
+      position: absolute;
+      background: #6002E9;
+      background: linear-gradient(90deg, #6002E9 0%, #a455f8 100%);
+      border-radius: 66% 86% 89% 55% / 60% 100% 50% 90%;
+      animation:
+          transform 10s ease-in-out infinite both alternate,
+          movement_one 20s ease-in-out infinite both;
+      width: 750px;
+      height: 550px;
+      z-index: -1;
+      right: 50%;
+  }
+
+  .myblob2 {
+      position: absolute;
+      background: #6002E9;
+      background: linear-gradient(90deg, #6002E9 0%, #a455f8 100%);
+      border-radius: 66% 86% 89% 55% / 60% 100% 50% 90%;
+      animation:
+          transform 10s ease-in-out infinite both alternate,
+          movement_one 20s ease-in-out infinite both;
+      width: 750px;
+      height: 650px;
+      z-index: -1;
+      left: 45%;
+      margin-top: -150px;
+  }
+
+  @media screen and (max-width: 1024px) {
+      .myblob {
+          position: absolute;
+          background: #6002E9;
+          background: linear-gradient(90deg, #6002E9 0%, #a455f8 100%);
+          border-radius: 66% 86% 89% 55% / 60% 100% 50% 90%;
+          animation:
+              transform 10s ease-in-out infinite both alternate,
+              movement_one 20s ease-in-out infinite both;
+          width: 750px;
+          height: 550px;
+          z-index: -1;
+          top: 0;
+          right: 25%;
+      }
+
+      .myblob2 {
+          margin-left: 20px;
+      }
+
+  }
+
+  @media screen and (max-width: 768px) {
+      .myblob2 {
+          position: absolute;
+          background: #6002E9;
+          background: linear-gradient(90deg, #6002E9 0%, #a455f8 100%);
+          border-radius: 66% 86% 89% 55% / 60% 100% 50% 90%;
+          animation:
+              transform 10s ease-in-out infinite both alternate,
+              movement_one 20s ease-in-out infinite both;
+          width: 750px;
+          height: 450px;
+          z-index: -1;
+          margin-top: 420px;
+
+          left: 0;
+      }
+  }
+
+
+
+  @keyframes transform {
+
+      0%,
+      100% {
+          border-radius: 66% 86% 89% 55% / 60% 100% 50% 90%;
+      }
+
+  }
+
+  @keyframes movement_one {
+
+      0%,
+      100% {
+          transform: none;
+      }
+
+      50% {
+          transform: translate(5%, 5%) rotateY(20deg) scale(1.01);
+      }
+  }
+
+
+  .switch {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+  }
