@@ -8,7 +8,7 @@
 
         <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-96 md:mr-4 mb-8">
             <div class="flex flex-col w-full mx-1 overflow-auto">
-                <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Derniere Sites Ajoutés
+                <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Derniers Sites Ajoutés
                 </h1>
                 <table class="divide-y ">
                     <thead class="">
@@ -65,7 +65,7 @@
         <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-96 md:ml-4">
 
             <div class="flex flex-col w-full mx-1 overflow-auto">
-                <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Dernieres Inscriptions
+                <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Derniéres Inscriptions
                 </h1>
                 <table class="divide-y ">
                     <thead class="">
