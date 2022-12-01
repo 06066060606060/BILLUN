@@ -14,7 +14,7 @@
             <div class="flex flex-col w-full mx-1 overflow-auto">
                 <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Derniers Sites Ajoutés
                 </h1>
-                <table class="divide-y ">
+                <table class="divide-y">
                     <thead class="">
                         <tr class="border-b border-gray-500 ">
                             <th scope="col"
@@ -46,7 +46,7 @@
                                         </span>
                                     @endif
                                 </td>
-                                <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
+                                <td class="xl:max-w-[230px] max-w-[165px] p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container overflow-hidden">
                                     {{ $site->url }}
                                 </td>
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
@@ -89,10 +89,10 @@
 
                         @foreach ($users as $user)
                             <tr class="mx-2 border-b border-gray-500">
-                                <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap time-container">
+                                <td class="max-w-[200px] p-4 text-sm font-normal text-gray-300 whitespace-nowrap time-container  overflow-hidden">
                                     {{ $user->name }}
                                 </td>
-                                <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
+                                <td class="xl:max-w-[230px] max-w-[165px]  p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container overflow-hidden">
                                     {{ $user->email }}
                                 </td>
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
