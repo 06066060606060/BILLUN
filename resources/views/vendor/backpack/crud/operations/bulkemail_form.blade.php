@@ -22,21 +22,23 @@
             @endif
             <form method="post" action="/bulksaveemail">
                 @csrf
-                <div class="bg-white lg:w-1/2 rounded-xl">
-                    <div class="flex flex-col py-4 m-4">
-                        <label>Adresse Email:</label>
-                        <div class="flex flex-col">
-                            {{-- radio button to chose secure or not secure --}}
-                            <div class="flex flex-row justify-center">
-                                <label class="inline-flex items-center">
-                                    <input type="radio" class="form-radio" name="secure" value="1" checked>
-                                    <span class="mx-2 text-green-800">Securisé</span>
-                                </label>
-                                <label class="inline-flex items-center">
-                                    <input type="radio" class="form-radio" name="secure" value="0">
-                                    <span class="mx-2 text-red-800">Non Sécurisé</span>
-                                </label>
-                            </div>
+                                <div class="flex flex-col p-4 bg-white rounded-xl">
+
+                    <label>Mails:</label>
+
+                    {{-- radio button to chose secure or not secure --}}
+                    <div class="flex flex-row justify-center">
+                        <label class="inline-flex items-center">
+                            <input type="radio" class="form-radio" name="secure" value="1" checked>
+                            <span class="mx-2 text-green-800">Securisé</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" class="form-radio" name="secure" value="0">
+                            <span class="mx-2 text-red-800">Non Sécurisé</span>
+                        </label>
+                    </div>
+                    <div class="flex w-full">
+                        <div class="flex flex-col w-1/2 px-2">
 
                             <input type="text" name="mails[]" class="my-1 form-control">
                             <input type="text" name="mails[]" class="my-1 form-control">
@@ -50,14 +52,27 @@
                             <input type="text" name="mails[]" class="my-1 form-control">
                             <input type="text" name="mails[]" class="my-1 form-control">
                             <input type="text" name="mails[]" class="my-1 form-control">
+                        </div>
+                        <div class="flex flex-col w-1/2">
 
+                            <input type="text" name="mails[]" class="my-1 form-control">
+                            <input type="text" name="mails[]" class="my-1 form-control">
+                            <input type="text" name="mails[]" class="my-1 form-control">
+                            <input type="text" name="mails[]" class="my-1 form-control">
+                            <input type="text" name="mails[]" class="my-1 form-control">
+                            <input type="text" name="mails[]" class="my-1 form-control">
+                            <input type="text" name="mails[]" class="my-1 form-control">
+                            <input type="text" name="mails[]" class="my-1 form-control">
+                            <input type="text" name="mails[]" class="my-1 form-control">
+                            <input type="text" name="mails[]" class="my-1 form-control">
+                            <input type="text" name="mails[]" class="my-1 form-control">
+                            <input type="text" name="mails[]" class="my-1 form-control">
                         </div>
                     </div>
-
-
                 </div>
 
-                <div id="saveActions" class="form-group">
+
+                <div id="saveActions" class="pt-2 form-group">
                     <input type="hidden" name="_save_action" value="save_list">
                     <button type="submit" class="btn btn-success">
                         <span class="la la-save" role="presentation" aria-hidden="true"></span> &nbsp;
