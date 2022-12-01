@@ -223,7 +223,7 @@
     <style>
         * {
             scrollbar-width: thin;
-            scrollbar-color: var(--secondary) gray;
+            scrollbar-color: #86878B #05070C;
         }
 
         /* Chrome, Edge, and Safari */
@@ -234,15 +234,15 @@
         *::-webkit-scrollbar-track {
             margin-top: 5px;
             margin-bottom: 5px;
-            background: gray;
+            background:  #05070C;
             border-radius: 5px;
         }
 
         *::-webkit-scrollbar-thumb {
             margin-top: 5px;
-            background-color: var(--secondary);
+            background-color: #86878B;
             border-radius: 14px;
-            border: 3px solid gray;
+            border: 3px solid  #05070C;
         }
 
         .ct-label .ct-horizontal .ct-end {
