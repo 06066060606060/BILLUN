@@ -2,7 +2,7 @@
 
 @section('main')
     <div class="flex h-screen">
-        <div class="hidden w-1/2 bg-blue-500 md:flex">
+        <div class="hidden w-1/2 mybackground md:flex">
         </div>
         <div class="flex flex-col w-full py-24 lg:w-1/2">
             <div class="mx-16">
@@ -73,4 +73,5 @@
             @endif
         </div>
     </div>
+
 @endsection

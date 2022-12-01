@@ -15,6 +15,10 @@
   scroll-behavior: smooth;
 }
 
+.mybackground {
+  background: rgb(125,37,239);
+  background: linear-gradient(270deg, rgba(125,37,239,1) 0%, rgba(45,35,177,1) 60%, rgba(38,5,127,1) 100%);
+}
 
 .sidebar {
   @apply p-4 shadow-md shadow-black border-t border-black border-opacity-50 rounded-lg mb-2 mt-3 bg-gray-900 w-[230px] !important;
