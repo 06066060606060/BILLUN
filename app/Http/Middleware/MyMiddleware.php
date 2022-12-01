@@ -20,7 +20,7 @@ class MyMiddleware
        if (backpack_auth()->user()->role == 'admin') {
             return $next($request);
         } else if (backpack_auth()->user()->role == 'user') {
-            return redirect('/');
+            return $next($request);
         } else{
             return redirect('/');
         }
