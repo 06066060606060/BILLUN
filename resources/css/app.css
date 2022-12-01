@@ -24,6 +24,9 @@
   @apply rounded-lg my-1 !important;
 }
 
+.page-link {
+  color: rgb(94, 94, 94) !important;
+}
 
 .myshadowDark {
   text-shadow: 2px 2px 2px #00000097;

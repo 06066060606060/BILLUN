@@ -39,8 +39,8 @@ class EmailsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('adresse');
         CRUD::column('secure')->label('Verifié')->type('boolean');
+        CRUD::column('adresse');
         // CRUD::column('categorie');
         CRUD::column('updated_at')->label('Date');;
 
@@ -62,31 +62,31 @@ class EmailsCrudController extends CrudController
         CRUD::setValidation(EmailsRequest::class);
 
         CRUD::field('adresse');
-        $this->crud->addField(
-            [   // select_from_array
-            'name'        => 'secure',
-            'label'       => "Vérifié",
-            'type'        => 'select_from_array',
-            'options'     => [
-                '1' => 'Securisé',
-                '0' => 'Non Sécurisé',
-            ],
-            'allows_null' => false,
-            'default'     => 'one',
-            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
-        ]);
-        $this->crud->addField([   // select_from_array
-            'name'        => 'categorie',
-            'label'       => "Categories",
-            'type'        => 'select_from_array',
-            'options'     => [
-                '0' => 'Divers',
-                '1' => 'option 1',
-            ],
-            'allows_null' => false,
-            'default'     => '0',
-            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
-        ]);
+        // $this->crud->addField(
+        //     [   // select_from_array
+        //     'name'        => 'secure',
+        //     'label'       => "Vérifié",
+        //     'type'        => 'select_from_array',
+        //     'options'     => [
+        //         '1' => 'Securisé',
+        //         '0' => 'Non Sécurisé',
+        //     ],
+        //     'allows_null' => false,
+        //     'default'     => 'one',
+        //     // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        // ]);
+        // $this->crud->addField([   // select_from_array
+        //     'name'        => 'categorie',
+        //     'label'       => "Categories",
+        //     'type'        => 'select_from_array',
+        //     'options'     => [
+        //         '0' => 'Divers',
+        //         '1' => 'option 1',
+        //     ],
+        //     'allows_null' => false,
+        //     'default'     => '0',
+        //     // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        // ]);
         // CRUD::field('utilisateur');
         // CRUD::field('categorie');
 

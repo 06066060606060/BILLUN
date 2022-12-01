@@ -6,12 +6,10 @@
             <div class="btn-group" role="group">
         @endif
 
-        <button type="submit" class="btn btn-danger">
+          <button type="submit" class="btn btn-danger">
             <span class="la la-save" role="presentation" aria-hidden="true"></span> &nbsp;
             <span data-value="{{ $saveAction['active']['value'] }}">Enregistrer</span>
         </button>
-
-       
 
         @if(!empty($saveAction['options']))
             </div>

@@ -245,6 +245,8 @@
             border: 3px solid  #05070C;
         }
 
+
+
         .ct-label .ct-horizontal .ct-end {
             fill: white;
         }

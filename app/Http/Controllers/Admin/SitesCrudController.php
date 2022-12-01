@@ -75,30 +75,30 @@ class SitesCrudController extends CrudController
             'default'     => 'one',
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
-        $this->crud->addField([   // select_from_array
-            'name'        => 'pays',
-            'label'       => "Pays",
-            'type'        => 'select_from_array',
-            'options'     => [
-                '0' => 'Autre',
-                '1' => 'France',
-            ],
-            'allows_null' => false,
-            'default'     => '0',
-            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
-        ]);
-        $this->crud->addField([   // select_from_array
-            'name'        => 'categorie',
-            'label'       => "Categories",
-            'type'        => 'select_from_array',
-            'options'     => [
-                '0' => 'Divers',
-                '1' => 'option 1',
-            ],
-            'allows_null' => false,
-            'default'     => '0',
-            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
-        ]);
+        // $this->crud->addField([   // select_from_array
+        //     'name'        => 'pays',
+        //     'label'       => "Pays",
+        //     'type'        => 'select_from_array',
+        //     'options'     => [
+        //         '1' => 'Autre',
+        //         '0' => 'France',
+        //     ],
+        //     'allows_null' => false,
+        //     'default'     => '1',
+        //     // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        // ]);
+        // $this->crud->addField([   // select_from_array
+        //     'name'        => 'categorie',
+        //     'label'       => "Categories",
+        //     'type'        => 'select_from_array',
+        //     'options'     => [
+        //         '0' => 'Divers',
+        //         '1' => 'option 1',
+        //     ],
+        //     'allows_null' => false,
+        //     'default'     => '0',
+        //     // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        // ]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
