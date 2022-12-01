@@ -90,7 +90,7 @@
                         <p class="mb-3 leading-relaxed text-left cropped">Quelles seraient les conséquences d’une perte de confidentialité de vos échanges emails ? Que se passerait-il si des attaquants avaient accès aux données que vous partagez, aux documents d’entreprise que vous envoyez et aux documents confidentiels que vous recevez ? Avec BILLUN, assurez-vous de sécuriser les échanges emails entre vos collaborateurs et entre votre organisation et l’extérieur. BILLUN veille à la confidentialité de vos échanges emails, de vos conversations et des données que vous partagez.</p>
                         <div x-data="{ modelOpen: false }">
 
-                            <button @click="modelOpen =!modelOpen" id="primaryButton"
+                            <button @click="modelOpen =!modelOpen" id=""
                                 class="text-[#EE007E] hover:text-[#6002E9] font-bold text-left">
                                 En savoir plus >
                             </button>
@@ -140,7 +140,7 @@
                         <p class="mb-3 leading-relaxed text-left cropped"> Un fondateur dirigeant appelle le responsable financier de son organisation pour lui demander le virement d’une grosse somme d’argent afin de finaliser une transaction. Le virement est effectué dans la panique et finalement, lorsque la tension retombe, on s’apperçoit que tout cela n’était qu’une arnaque et que des millions se sont envolés. BILLUN vérifie pour vous l’identité des expéditeurs vous envoyant des emails et vous averti lorsque l’identité supposée de l’émeteur n’est pas correcte. Assurez-vous ainsi d’avoir à faire aux bons interlocuteurs et prémunissez-vous des risques d’usurpation d’identité dans votre organisation.</p>
                             <div x-data="{ modelOpen: false }">
 
-                                <button @click="modelOpen =!modelOpen" id="primaryButton"
+                                <button @click="modelOpen =!modelOpen" id=""
                                     class="text-[#EE007E] hover:text-[#6002E9] font-bold text-left">
                                     En savoir plus >
                                 </button>
@@ -191,7 +191,7 @@
                         <p class="mb-3 leading-relaxed text-left cropped"> Le principal risque en cybersécurité, c’est là où vous cliquez. BILLUN vous avertie lorsqu’un lien contenu dans un email est suspect, dangereux ou frauduleux. Un code couleur simple pour vous permettre de détecter, en un clin d’oeil, si votre navigation est sécurisée. Ainsi, vous vous assurez de ne naviguer que sur des sites officiels et de confiance, tout en veillant à la confidentialité et à la sécurité de vos données.</p>
                             <div x-data="{ modelOpen: false }">
 
-                                <button @click="modelOpen =!modelOpen" id="primaryButton"
+                                <button @click="modelOpen =!modelOpen" id=""
                                     class="text-[#EE007E] hover:text-[#6002E9] font-bold text-left">
                                     En savoir plus >
                                 </button>
@@ -291,7 +291,7 @@
         <hi class="pb-8 mx-auto text-4xl font-extrabold myshadowDark">Contactez-Nous !</hi>
         <div x-data="{ modelOpen: false }">
 
-            <button @click="modelOpen =!modelOpen" id="primaryButton"
+            <button @click="modelOpen =!modelOpen" id=""
                 class="px-12 py-3 mx-4 border border-gray-400 rounded-full hover:bg-gray-400 hover:bg-opacity-50">
                 Contactez Nous Maintenant >
             </button>
@@ -353,7 +353,7 @@
                                             données afin de répondre à ma demande.*<br>
                                             <br>
                                             Pour plus d’informations, nous vous invitons à lire la <br><span
-                                                class="text-[#2F42EB] font-semibold" onclick="document.getElementById('primaryButton').click()">Politique de
+                                                class="text-[#2F42EB] font-semibold" onclick="document.getElementById('primaryButton').click()"  @click="modelOpen = false">Politique de
                                                 Confidentialité</span>, ou à envoyer un mail de demande d’information.
                                         </p>
                                     </div>

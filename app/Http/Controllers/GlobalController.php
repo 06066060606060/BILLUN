@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Articles;
+use App\Models\Sites;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -22,5 +22,13 @@ class GlobalController extends Controller
         $users = User::all();
         return $users;
     }
+
+    static function getSites()
+    {
+        //retrive all sites
+        $sites = Sites::all()->sortByDesc('id');
+        return $sites;
+    }
+
     
 }

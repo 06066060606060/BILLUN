@@ -62,13 +62,14 @@ class SitesCrudController extends CrudController
         CRUD::setValidation(SitesRequest::class);
 
         CRUD::field('url');
-        $this->crud->addField([   // select_from_array
+        $this->crud->addField(
+            [   // select_from_array
             'name'        => 'secure',
             'label'       => "Vérifié",
             'type'        => 'select_from_array',
             'options'     => [
-                '1' => 'securisé',
-                '0' => 'danger',
+                '1' => 'Securisé',
+                '0' => 'Non Sécurisé',
             ],
             'allows_null' => false,
             'default'     => 'one',

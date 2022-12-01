@@ -204,7 +204,7 @@
     <h1 class="pt-12 text-4xl font-extrabold text-center">
         Certifiez votre site web avec <span class="text-[#2F42EB]">BILLUN</span>
     </h1>
-    <div class="flex flex-col justify-center w-3/4 pt-6 pb-12 mx-auto md:pt-12">
+    <div class="flex flex-col items-center justify-center w-3/4 pt-6 pb-12 mx-auto md:pt-12">
 
         <div class="container py-12">
             <div class="lg:flex">

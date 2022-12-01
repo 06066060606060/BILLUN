@@ -17,11 +17,11 @@ class Sites extends Model
     protected $fillable = [
         'id',
         'url',
-        'status',
+        'secure',
         'pays',
-
         'created_at',
-        'updated_at',        'utilisateur',
+        'updated_at',        
+        'utilisateur',
         'categorie',
     ];
 }
