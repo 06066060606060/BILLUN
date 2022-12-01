@@ -38,5 +38,31 @@ class GlobalController extends Controller
         return $emails;
     }
 
+    //function to save the urls list from post request
+    function bulksave(Request $request)
+    {
+      
+        //get the list of urls from the post request
+        $urls = $request->input('urls');
+        $secure = $request->input('secure');
+        //split the list of urls into an array
+      
+        //loop through the array of urls
+        foreach ($urls as $url) {
+            //check if the url is not empty
+            if (!empty($url)) {
+                //check if the url is not already in the database
+                if (Sites::where('url', $url)->doesntExist()) {
+                    //save the url in the database
+                    $site = new Sites();
+                    $site->url = $url;
+                    $site->secure = $secure;
+                    $site->save();
+                }
+            }
+        }
+        //redirect to the sites list
+        return redirect()->back();
+    }
     
 }
