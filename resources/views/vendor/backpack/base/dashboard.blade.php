@@ -27,7 +27,7 @@
                             </th>
                             <th scope="col"
                                 class="hidden pb-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase lg:block">
-                                Date
+                                Editer
                             </th>
                         </tr>
                     </thead>
@@ -48,10 +48,6 @@
                                 </td>
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
                                     {{ $site->url }}
-                                </td>
-                                <td
-                                    class="hidden p-4 text-sm font-normal text-gray-300 lg:block whitespace-nowrap rate-container">
-                                    {{ $site->updated_at->diffForHumans() }}
                                 </td>
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
                                     <a href="/admin/sites/{{ $site->id }}/edit">

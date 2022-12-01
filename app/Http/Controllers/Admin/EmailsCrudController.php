@@ -28,7 +28,7 @@ class EmailsCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Emails::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/emails');
-        CRUD::setEntityNameStrings('emails', 'emails');
+        CRUD::setEntityNameStrings('email', 'emails');
     }
 
     /**
@@ -62,19 +62,19 @@ class EmailsCrudController extends CrudController
         CRUD::setValidation(EmailsRequest::class);
 
         CRUD::field('adresse');
-        // $this->crud->addField(
-        //     [   // select_from_array
-        //     'name'        => 'secure',
-        //     'label'       => "Vérifié",
-        //     'type'        => 'select_from_array',
-        //     'options'     => [
-        //         '1' => 'Securisé',
-        //         '0' => 'Non Sécurisé',
-        //     ],
-        //     'allows_null' => false,
-        //     'default'     => 'one',
-        //     // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
-        // ]);
+        $this->crud->addField(
+            [   // select_from_array
+            'name'        => 'secure',
+            'label'       => "Vérifié",
+            'type'        => 'select_from_array',
+            'options'     => [
+                '1' => 'Securisé',
+                '0' => 'Non Sécurisé',
+            ],
+            'allows_null' => false,
+            'default'     => 'one',
+            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        ]);
         // $this->crud->addField([   // select_from_array
         //     'name'        => 'categorie',
         //     'label'       => "Categories",

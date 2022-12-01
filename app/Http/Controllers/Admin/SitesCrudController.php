@@ -28,7 +28,7 @@ class SitesCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Sites::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/sites');
-        CRUD::setEntityNameStrings('sites', 'sites');
+        CRUD::setEntityNameStrings('site', 'sites');
     }
 
     /**
@@ -65,7 +65,7 @@ class SitesCrudController extends CrudController
         $this->crud->addField(
             [   // select_from_array
             'name'        => 'secure',
-            'label'       => "Vérifié",
+            'label'       => "Status",
             'type'        => 'select_from_array',
             'options'     => [
                 '1' => 'Securisé',
