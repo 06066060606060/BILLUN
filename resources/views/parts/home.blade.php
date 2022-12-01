@@ -1,7 +1,7 @@
 <section class="container p-6 mx-auto">
 
     <div class="overflow-hidden body-font">
-	<div class="z-0 shape-blob one"></div>
+	<div class="z-0 one"></div>
         <div class="container px-5 mx-auto py-18">
             <div class="flex flex-wrap w-full mx-auto mt-48 lg:flex-nowrap md:justify-center">
                 <div class="w-full mb-6 lg:w-1/2 lg:pr-16 lg:py-6 lg:mb-0 ">
@@ -60,6 +60,7 @@
 
 
 <section class="container p-6 mx-auto">
+
     <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
         <div class="max-w-screen-xl mx-auto">
             <h1 class="pb-8 text-4xl font-extrabold text-center text-black">
@@ -124,12 +125,13 @@
     </div>
 </section>
 
-<section class="container p-6 mx-auto">
+<section class="container relative p-6 mx-auto">
     <div class="max-w-screen-xl px-4 pt-8 pb-16 mx-auto lg:px-2">
         <h1 class="pb-8 text-4xl font-extrabold text-center text-black">
             Navigation sécurisée avec <span class="text-[#2F42EB]">BILLUN</span> !
         </h1>
         <div class="flex flex-wrap w-full mx-auto mt-16 lg:flex-nowrap md:mt-16 md:justify-center">
+        	<div class="shape-blob"></div>
             <div class="">
                 <img id="logo"
                     class="absolute object-cover object-center select-none md:w-[290px] md:h-[290px] w-48 h-48 ml-16 mt-16 md:ml-32 md:mt-24 lg:mt-36"
@@ -220,10 +222,10 @@
 
 
                 <div
-                    class="z-10 w-full md:w-3/4 px-4 py-8 mx-auto overflow-hidden bg-white rounded-[50px] shadow-lg shadow-gray-400  lg:max-w-lg mt-8">
+                    class="z-10 w-full md:w-3/4 px-2 py-8 mx-auto overflow-hidden bg-white rounded-[50px] shadow-lg shadow-gray-400  lg:max-w-lg mt-8 min-w-[310px] pr-4">
                     <h1 class="text-xl font-extrabold text-[#2F42EB] ml-4">Formulaire *</h1>
 
-                    <form action="contact" class="z-10 p-8 pt-4 mt-2 text-lg" method="POST" >
+                    <form action="contact" class="z-10 p-4 pt-4 mt-2 text-lg md:p-8" method="POST" >
                     @csrf
                         <div class="flex">
                             <input type="text" name="nom" placeholder="Nom" 
