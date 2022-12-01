@@ -1,4 +1,8 @@
 @php use \App\Http\Controllers\GlobalController; @endphp
+@php  $users = GlobalController::getUsers();@endphp
+@php  $emails = GlobalController::getEmails();@endphp
+@php  $sites = GlobalController::getSites();@endphp
+
 @extends(backpack_view('blank'))
 @section('content')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.css"
@@ -28,9 +32,9 @@
                         </tr>
                     </thead>
                     <tbody class="">
-                        @php  $sites = GlobalController::getSites();@endphp
+
                         @foreach ($sites->take(6) as $site)
-                        <tr class="mx-2 border-b border-gray-500">
+                            <tr class="mx-2 border-b border-gray-500">
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap time-container">
                                     @if ($site->secure == 1)
                                         <span class="px-2 py-1 text-xs font-medium leading-4 text-green-800 rounded-full">
@@ -43,18 +47,18 @@
                                     @endif
                                 </td>
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
-                                     {{ $site->url }}
+                                    {{ $site->url }}
                                 </td>
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
                                     {{ $site->updated_at->diffForHumans() }}
                                 </td>
-                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
-                                <a href="/admin/sites/{{$site->id}}/edit">
-                                    <i class="las la-edit la-2x"></i>
-                                </a>
+                                <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
+                                    <a href="/admin/sites/{{ $site->id }}/edit">
+                                        <i class="las la-edit la-2x"></i>
+                                    </a>
                                 </td>
-                   
-                        </tr>
+
+                            </tr>
                         @endforeach
 
                     </tbody>
@@ -85,7 +89,7 @@
                         </tr>
                     </thead>
                     <tbody class="">
-                        @php  $users = GlobalController::getUsers();@endphp
+
                         @foreach ($users as $user)
                             <tr class="mx-2 border-b border-gray-500">
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap time-container">
@@ -121,10 +125,13 @@
                     Nombre de sites enregistrés : {{ $sites->count() }}
                 </div>
                 <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
+                    Nombre d'adresse email enregistrés : {{ $emails->count() }}
+                </div>
+                <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
                     Nombre d'utilisateurs : {{ $users->count() }}
                 </div>
-                     <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
-                   Requetes API : 56
+                <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
+                    Requetes API : 56
                 </div>
             </div>
 
