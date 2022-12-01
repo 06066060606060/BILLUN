@@ -1,12 +1,26 @@
 <div>
+
+<h1>Mail de Billun</h1>
+
+
     <i>Message de:
         {{ $mailData['email'] }}</i>
+    <i><br>
     <i>
         nom:
-        {{ $mailData['name'] }}
+        {{ $mailData['nom'] }}<br>
+        Prénom:
+        {{ $mailData['prenom'] }}
     </i>
     <p>
-        {{ $mailData['message'] }}
+       Société: {{ $mailData['societe'] }}
+    </p>
+    <p>
+       Siteweb: {{ $mailData['siteweb'] }}
+    </p>
+
+    <p>
+   Message: {{ $mailData['message'] }}
     </p>
 
 </div>

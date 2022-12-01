@@ -20,21 +20,15 @@ class MailController extends Controller
         $usermail = env('MAIL_USERNAME');
        
         $this->validate($request, [ 'email' => 'required' ]);
-        $this->validate($request, [ 'name' => 'required' ]);
-        $this->validate($request, [ 'message' => 'required|string' ]);
-
-
-       if ($request->session()->exists('mail')) {
-             return back()->with('already_send', 'ok');
-        }
-       else 
-       {
+        $this->validate($request, [ 'nom' => 'required' ]);
+        $this->validate($request, [ 'prenom' => 'required' ]);
+        $this->validate($request, [ 'societe' => 'required' ]);
+        $this->validate($request, [ 'siteweb' => 'required' ]);
+        $this->validate($request, [ 'message' => 'required' ]);
         Mail::to($usermail)->queue(new MyMail($request->all()));
 
-        $request->session()->put('mail', '1');
-
         return back()->with('Message_envoye', 'ok');
-       }
+       
        
     }
 }

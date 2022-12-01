@@ -221,16 +221,16 @@
                     class="z-10 w-full md:w-3/4 px-4 py-8 mx-auto overflow-hidden bg-white rounded-[50px] shadow-lg shadow-gray-400  lg:max-w-lg mt-8">
                     <h1 class="text-xl font-extrabold text-[#2F42EB] ml-4">Formulaire *</h1>
 
-                    <form action="contact" class="z-10 p-8 pt-4 mt-2 text-lg" method="POST">
+                    <form action="contact" class="z-10 p-8 pt-4 mt-2 text-lg" method="POST" >
                     @csrf
                         <div class="flex">
-                            <input type="text" name="nom" placeholder="Nom" required
-                                class="block w-[40%] px-5 py-2 mt-2 mr-8 text-gray-700 placeholder-gray-400 bg-gray-200  rounded-xl  focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" />
-                            <input type="text" name="prénom" placeholder="Prenom"
+                            <input type="text" name="nom" placeholder="Nom" 
+                                class="block w-[40%] px-5 py-2 mt-2 mr-8 text-gray-700 placeholder-gray-400 bg-gray-200  rounded-xl  focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" required />
+                            <input type="text" name="prenom" placeholder="Prénom"
                                 class="block w-[40%] px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-gray-200  rounded-xl  focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" />
                         </div>
                         <div class="flex-1 pt-2 mt-2">
-                            <input type="text" name="société" placeholder="Société" required
+                            <input type="text" name="societe" placeholder="Société" required
                                 class="block w-3/4 px-5 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-gray-200 rounded-xl focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" />
                         </div>
                         <div class="flex-1 mt-2 pt-2.5">
@@ -250,7 +250,7 @@
                         </div>
                         <div class="w-full pt-2 mt-2">
                             <div class="flex">
-                                <input type="checkbox" name="operation" value="0" class="mb-20 mr-4" id="checkme"  onchange="displayRadioValue();">
+                                <input type="checkbox" name="operation" value="0" class="mb-20 mr-4" id="checkme"  required>
                                 <p class="text-xs leading-relaxed text-left">
                                     J'accepte que <span class="text-[#2F42EB] font-semibold">Billun</span> traite mes
                                     données afin de répondre à ma demande.*<br>
@@ -262,7 +262,7 @@
                             </div>
                         </div>
                         <div class="flex flex-col items-center pt-2 align-middle">
-                            <button id="sendNew" disabled="disabled"
+                            <button id="sendNew" type="submit"
                                 class="w-3/4 px-6 py-2 mt-6 font-bold tracking-wide text-white capitalize transition-colors duration-300 transform rounded-full shadow mycolor focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                                 Envoyer le message
                             </button>
@@ -286,20 +286,4 @@
 
 <script>
 
-function displayRadioValue(){
-  var checker = document.getElementById('checkme');
-        var sendbtn = document.getElementById('sendNew');
-        // when unchecked or checked, run the function
-        checker.onchange = function() {
-            if (this.checked) {
-              console.log("checked");
-                sendbtn.disabled = false;
-            } else {
-              console.log("unchecked");
-                sendbtn.disabled = true;
-            }
-
-        }
-}
-
-   </script>
+ </script>
