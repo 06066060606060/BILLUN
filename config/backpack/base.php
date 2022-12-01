@@ -85,7 +85,7 @@ return [
      // ------
  
      // Menu logo. You can replace this with an <img> tag if you have a logo.
-     'project_logo'    => '<img class="w-8 h-8 mr-2" src="../assets/favicon.ico"><h2 class="pt-2 text-md">Billun</h2>',
+     'project_logo'    => '<img class="w-8 h-8 mr-2" src="https://billun.com/assets/favicon.ico"><h2 class="pt-2 text-md">Billun</h2>',
  
      // Show / hide breadcrumbs on admin panel pages.
      'breadcrumbs' => false,

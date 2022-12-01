@@ -67,6 +67,7 @@ class UserCrudController extends CrudController
     {
         CRUD::field('name');
         CRUD::field('email');
+        CRUD::field('password');
         $this->crud->addField([   // select_from_array
             'name'        => 'role',
             'label'       => "role",
