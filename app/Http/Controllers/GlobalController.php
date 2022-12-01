@@ -64,5 +64,30 @@ class GlobalController extends Controller
         //redirect to the sites list
         return redirect()->back();
     }
+    function bulksaveemail(Request $request)
+    {
+      
+        //get the list of urls from the post request
+        $emails = $request->input('mails');
+        $secure = $request->input('secure');
+        //split the list of emails into an array
+      
+        //loop through the array of emails
+        foreach ($emails as $email) {
+            //check if the email is not empty
+            if (!empty($email)) {
+                //check if the email is not already in the database
+                if (Emails::where('adresse', $email)->doesntExist()) {
+                    //save the email in the database
+                    $site = new Emails();
+                    $site->adresse = $email;
+                    $site->secure = $secure;
+                    $site->save();
+                }
+            }
+        }
+        //redirect to the sites list
+        return redirect()->back();
+    }
     
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Sites;
+use App\Models\Settings;
 use Illuminate\Support\Facades\Log;  //log to laravel.log
 
 /**
@@ -24,7 +25,9 @@ class SiteController extends Controller
      */
     public function controlUrl(Request $request)
     {
-    
+
+
+        
         $uri = $this->getUri($request->url);
         return response()->json(["statut" => $this->getSatutFromUri($uri)]);
     }

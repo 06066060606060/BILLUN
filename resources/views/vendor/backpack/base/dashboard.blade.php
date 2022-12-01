@@ -46,7 +46,8 @@
                                         </span>
                                     @endif
                                 </td>
-                                <td class="xl:max-w-[230px] max-w-[165px] p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container overflow-hidden">
+                                <td
+                                    class="xl:max-w-[230px] max-w-[165px] p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container overflow-hidden">
                                     {{ $site->url }}
                                 </td>
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
@@ -89,10 +90,12 @@
 
                         @foreach ($users as $user)
                             <tr class="mx-2 border-b border-gray-500">
-                                <td class="max-w-[200px] p-4 text-sm font-normal text-gray-300 whitespace-nowrap time-container  overflow-hidden">
+                                <td
+                                    class="max-w-[200px] p-4 text-sm font-normal text-gray-300 whitespace-nowrap time-container  overflow-hidden">
                                     {{ $user->name }}
                                 </td>
-                                <td class="xl:max-w-[230px] max-w-[165px]  p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container overflow-hidden">
+                                <td
+                                    class="xl:max-w-[230px] max-w-[165px]  p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container overflow-hidden">
                                     {{ $user->email }}
                                 </td>
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
@@ -127,8 +130,17 @@
                 <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
                     Nombre d'utilisateurs : {{ $users->count() }}
                 </div>
-                <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
-                    Requetes API : 56
+                <div class="px-4 py-1 text-sm text-gray-300 whitespace-nowrap time-container">
+                @php $urls = env('APP_URL')&'/api/Site/Control' @endphp
+                    @if (curl_init($urls) !== false)
+                       API Online  <span class="px-2 py-1 text-xs font-medium leading-4 text-green-800 rounded-full">
+                         <i class="las la-check la-2x"></i>
+                        </span>
+                    @else
+                        API Offline  <span class="px-2 py-1 text-xs font-medium leading-4 text-red-800 rounded-full">
+                            <i class="las la-times la-2x"></i>
+                        </span>
+                    @endif
                 </div>
             </div>
 
@@ -230,7 +242,7 @@
         *::-webkit-scrollbar-track {
             margin-top: 5px;
             margin-bottom: 5px;
-            background:  #05070C;
+            background: #05070C;
             border-radius: 5px;
         }
 
@@ -238,7 +250,7 @@
             margin-top: 5px;
             background-color: #86878B;
             border-radius: 14px;
-            border: 3px solid  #05070C;
+            border: 3px solid #05070C;
         }
 
 

@@ -28,4 +28,5 @@ Route::middleware(['throttle:global'])->group(function () {
 
 Route::post('contact', [MailController::class, 'sendMessage'])->middleware(XssSanitizer::class);
 Route::post('bulksave', [GlobalController::class, 'bulksave']);
+Route::post('bulksaveemail', [GlobalController::class, 'bulksaveemail']);
 });
