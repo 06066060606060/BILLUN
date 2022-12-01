@@ -7,7 +7,9 @@
 <meta name="title" content="Billun">
 <meta name="description" content="Billun est une extension de contrôle de validation de l'url des sites web.">
 <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
 <meta property="image" content="./assets/logo.jpg">
+
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="">
