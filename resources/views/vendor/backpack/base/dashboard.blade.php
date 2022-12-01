@@ -10,7 +10,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <section class="flex flex-col pt-1 md:flex-row">
 
-        <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-96 md:mr-4 mb-8">
+        <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-96 md:mr-4 mb-8 shadow-md shadow-black">
             <div class="flex flex-col w-full mx-1 overflow-auto">
                 <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Derniers Sites Ajoutés
                 </h1>
@@ -26,7 +26,7 @@
                                 Url
                             </th>
                             <th scope="col"
-                                class="pb-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                class="hidden pb-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase lg:block">
                                 Date
                             </th>
                         </tr>
@@ -49,7 +49,7 @@
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
                                     {{ $site->url }}
                                 </td>
-                                <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
+                                <td class="hidden p-4 text-sm font-normal text-gray-300 lg:block whitespace-nowrap rate-container">
                                     {{ $site->updated_at->diffForHumans() }}
                                 </td>
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
@@ -66,7 +66,7 @@
             </div>
 
         </div>
-        <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-96 md:ml-4">
+        <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-96 md:ml-4 shadow-md shadow-black">
 
             <div class="flex flex-col w-full mx-1 overflow-auto">
                 <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Derniéres Inscriptions
@@ -117,7 +117,7 @@
 
     <section class="flex flex-col pt-8 md:pt-1 md:flex-row">
 
-        <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-64 md:mr-4 mb-8">
+        <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-64 md:mr-4 mb-8 shadow-md shadow-black">
             <div class="flex flex-col w-full mx-1 overflow-hidden">
                 <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Statistiques
                 </h1>
@@ -136,7 +136,7 @@
             </div>
 
         </div>
-        <div class="flex flex-col md:w-1/2 bg-[#111827] rounded-xl h-64 md:ml-4">
+        <div class="flex flex-col md:w-1/2 bg-[#111827] rounded-xl h-64 md:ml-4 shadow-md shadow-black">
             <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Historique
             </h1>
             <div class="h-48 ct-chart ct-perfect-fourth"></div>
