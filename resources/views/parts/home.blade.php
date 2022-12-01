@@ -1,9 +1,11 @@
 <section class="container p-6 mx-auto">
+
     <div class="overflow-hidden body-font">
+	<div class="z-0 shape-blob one"></div>
         <div class="container px-5 mx-auto py-18">
             <div class="flex flex-wrap w-full mx-auto mt-48 lg:flex-nowrap md:justify-center">
                 <div class="w-full mb-6 lg:w-1/2 lg:pr-16 lg:py-6 lg:mb-0 ">
-                    <h1 class="mb-4 text-3xl font-bold leading-tight text-gray-900 md:text-5xl title-font">NAVIGUEZ SUR
+                    <h1 class="z-50 mb-4 text-3xl font-bold leading-tight text-gray-900 md:text-5xl title-font">NAVIGUEZ SUR
                         INTERNET
                         <span style="color: #2F42EB">EN TOUTE SÉCURITÉ</span>
                     </h1>
