@@ -49,7 +49,8 @@
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
                                     {{ $site->url }}
                                 </td>
-                                <td class="hidden p-4 text-sm font-normal text-gray-300 lg:block whitespace-nowrap rate-container">
+                                <td
+                                    class="hidden p-4 text-sm font-normal text-gray-300 lg:block whitespace-nowrap rate-container">
                                     {{ $site->updated_at->diffForHumans() }}
                                 </td>
                                 <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
