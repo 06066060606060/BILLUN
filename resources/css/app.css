@@ -17,8 +17,12 @@
   
 
  .sidebar{
- @apply p-4 shadow-md shadow-black border-t border-black border-opacity-50 rounded-lg mb-2 mt-3 bg-gray-900 !important;
+ @apply p-4 shadow-md shadow-black border-t border-black border-opacity-50 rounded-lg mb-2 mt-3 bg-gray-900 w-[230px] !important;
  }
+
+ .nav-link{
+  @apply rounded-lg my-1 !important;
+  }
 
 
   .myshadowDark {
