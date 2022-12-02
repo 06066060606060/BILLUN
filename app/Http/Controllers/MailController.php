@@ -22,8 +22,6 @@ class MailController extends Controller
         $this->validate($request, [ 'email' => 'required' ]);
         $this->validate($request, [ 'nom' => 'required' ]);
         $this->validate($request, [ 'prenom' => 'required' ]);
-        $this->validate($request, [ 'societe' => 'required' ]);
-        $this->validate($request, [ 'siteweb' => 'required' ]);
         $this->validate($request, [ 'message' => 'required' ]);
         Mail::to($usermail)->queue(new MyMail($request->all()));
 

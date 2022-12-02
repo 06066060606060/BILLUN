@@ -328,7 +328,7 @@
                                     class="block w-[40%] px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-gray-200  rounded-xl  focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
                             <div class="flex-1 pt-2 mt-2">
-                                <input type="text" name="societe" placeholder="Société" required
+                                <input type="text" name="societe" placeholder="Société"
                                     class="block w-3/4 px-5 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-gray-200 rounded-xl focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
                             <div class="flex-1 mt-2 pt-2.5">
@@ -337,7 +337,7 @@
                             </div>
     
                             <div class="flex-1 pt-2 mt-2">
-                                <input type="text" name="siteweb" placeholder="Lien vers votre site web" required
+                                <input type="text" name="siteweb" placeholder="Lien vers votre site web"
                                     class="block w-3/4 px-5 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-gray-200 rounded-xl focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" />
                             </div>
     

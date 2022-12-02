@@ -13,10 +13,20 @@
         {{ $mailData['prenom'] }}
     </i>
     <p>
-       Société: {{ $mailData['societe'] }}
+        @if(!empty($mailData['societe']))
+            Société:
+            {{ $mailData['societe'] }}
+        @endif
     </p>
     <p>
-       Siteweb: {{ $mailData['siteweb'] }}
+   
+    
+    <p>
+          @if(!empty($mailData['siteweb']))
+            siteweb:
+            {{ $mailData['siteweb'] }}
+        @endif
+ 
     </p>
 
     <p>
