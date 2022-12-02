@@ -7,8 +7,10 @@
         {{ $mailData['email'] }}</i>
     <i><br>
         <i>
-            nom:
-            {{ $mailData['nom'] }}<br>
+            @if (!empty($mailData['nom']))
+                nom:
+                {{ $mailData['nom'] }}<br>
+            @endif
             @if (!empty($mailData['prenom']))
                 Prénom:
                 {{ $mailData['prenom'] }}
