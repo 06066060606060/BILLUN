@@ -49,7 +49,6 @@ class CheckIfAdmin
             ];
             Mail::to(env('MAIL_USERNAME'))->queue(new MyMail($mailcontent));
             Session::flush();
-            Auth::logout();
         return back()->with('Inscription', 'ok');;
         } 
     }
