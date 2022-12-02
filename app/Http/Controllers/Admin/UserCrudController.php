@@ -74,11 +74,11 @@ class UserCrudController extends CrudController
             'type'        => 'select_from_array',
             'options'     => [
                 'admin' => 'admin',
-                'verif' => 'verifié',
                 'user' => 'user',
+                'user0' => 'NonVérifié',
             ],
             'allows_null' => false,
-            'default'     => 'two',
+            'default'     => 'tree',
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
         /**

@@ -1,4 +1,14 @@
 <section class="container p-6 mx-auto">
+@if (session('Message_envoye'))
+    <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000, PopupUser())" class="absolute flex flex-col items-center top-[20%] left-[45%] z-50 transition">
+        <div id="popmenu" class="px-4 py-2 text-lg btnmenu text-white mx-auto bg-blue-700 rounded-lg">&zwnj; Message envoyé</div>
+    </div>
+@endif
+@if (session('Inscription'))
+    <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000, PopupUser())" class="absolute flex flex-col items-center top-[20%] left-[45%] z-50 transition">
+        <div id="popmenu" class="px-4 py-2 text-lg btnmenu text-white mx-auto bg-blue-700 rounded-lg">&zwnj; Inscription en attente de validation</div>
+    </div>
+@endif
 
     <div class="overflow-hidden body-font">
 	<div class="z-0 one"></div>
@@ -289,6 +299,10 @@
 </style>
 
 <script>
+    function PopupUser() {
+        console.log('okpop');
+        var updateElement = document.getElementById("popmenu");
+        updateElement.classList.toggle("active");
 
-
- </script>
+    }
+</script>

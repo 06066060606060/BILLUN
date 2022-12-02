@@ -6,6 +6,12 @@ use Closure;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MyMail;
 
+use function PHPSTORM_META\registerArgumentsSet;
+use function Termwind\render;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
+
 class CheckIfAdmin
 {
     /**
@@ -36,15 +42,15 @@ class CheckIfAdmin
             return true;
         } elseif ($user->role == 'user0') {
             $mailcontent = [
-                'name' => $user->email,
-                'email' => env('MAIL_USERNAME'),
+                'email' => $user->email,
+                'nom' => $user->name,
                 'message' =>
                     'nouvel utilisateur en attente de validation',
             ];
             Mail::to(env('MAIL_USERNAME'))->queue(new MyMail($mailcontent));
-            $user->role = 'user';
-            $user->save();
-            return true;
+            Session::flush();
+            Auth::logout();
+        return back()->with('Inscription', 'ok');;
         } 
     }
 
