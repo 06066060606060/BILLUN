@@ -53,6 +53,24 @@ class GlobalController extends Controller
         return $sites;
     }
 
+    static function getSitesecure()
+    {
+        //retrive all sites
+     
+            $sitesecure = Sites::where('secure', 1)->get();
+        
+        return $sitesecure;
+    }
+
+    static function getSitesinsecure()
+    {
+        //retrive all sites
+     
+            $sitesinsecure = Sites::where('secure', 0)->get();
+        
+        return $sitesinsecure;
+    }
+
     static function settings()
     {
         $settings = Settings::where('id', 1)->get();

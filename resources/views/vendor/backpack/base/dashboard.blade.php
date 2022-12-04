@@ -2,6 +2,8 @@
 @php  $users = GlobalController::getUsers();@endphp
 @php  $emails = GlobalController::getEmails();@endphp
 @php  $sites = GlobalController::getSites();@endphp
+@php  $sitesecure = GlobalController::getSitesecure();@endphp
+@php  $sitesinsecure = GlobalController::getSitesinsecure();@endphp
 @php  $settings = GlobalController::settings();@endphp
 
 @extends(backpack_view('blank'))
@@ -112,7 +114,7 @@
             </div>
         @endif
 
-   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
     </section>
 
@@ -128,7 +130,7 @@
                 <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
                     Nombre d'adresse email enregistrés : {{ $emails->count() }}
                 </div>
-                 <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
+                <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
                     Nombre de téléchargements: {{ $settings }}
                 </div>
                 @if (backpack_user()->role == 'admin')
@@ -153,7 +155,8 @@
         </div>
         @if (backpack_user()->role == 'admin')
             <div class="flex flex-col md:w-1/2 bg-[#111827] rounded-xl h-64 md:ml-4 shadow-md shadow-black">
-                  <div id="chartContainer" class="flex w-[80%] h-64 mx-auto my-2 "></div>
+            
+                <div id="chartContainer" class=" flex w-[80%] h-64 mx-auto my-2 z-0">
 
             </div>
         @endif
@@ -171,23 +174,37 @@
 
 
     <script>
-       window.onload = function () {
+        window.onload = function() {
 
             //chart 1 donut
             var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                data: [{
-                    type: "doughnut",
-                    showInLegend: true,
-                    startAngle: 270,
-                    innerRadius: 80,
-                    dataPoints: [
-                        { y: 75, name: "Sécurisé", color: "#14CE1B" },
-                        { y: 25, name: "Non Sécurisé", color: "#211F20" },
+                    backgroundColor: "#111827",
+                    animationEnabled: true,
+                
+                    data: [{
+                        type: "doughnut",
+                        showInLegend: true,
+                        startAngle: 270,
+                        innerRadius: 80,
+                        
+                        dataPoints: [{
+                                y: {{ $sitesecure->count() }},
+                                name: "Sécurisé",
+                                color: "green",
+                            },
+                            {
+                                y: {{ $sitesinsecure->count() }},
+                                name: "Non Sécurisé",
+                                color: "red"
+                            },
 
-                    ]
-                }]
-            });
+
+                        ]
+                    }],
+
+                }
+
+            );
             chart.render();
         };
     </script>
@@ -222,7 +239,8 @@
 
         .chartContainer>img {
             display: none;
-        }
 
+        }
+        
     </style>
 @endsection
