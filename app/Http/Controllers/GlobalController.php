@@ -32,14 +32,23 @@ class GlobalController extends Controller
     static function getSites()
     {
         //retrive all sites
-        $sites = Sites::all()->sortByDesc('id');
+        if (backpack_user()->role == 'user') {
+            $sites = Sites::where('utilisateur', backpack_user()->id)->get()->sortByDesc('id');
+        } else {
+            $sites = Sites::all()->sortByDesc('id');
+        }
+        
         return $sites;
     }
 
     static function getEmails()
     {
         //retrive all sites
-        $emails = Emails::all()->sortByDesc('id');
+        if (backpack_user()->role == 'user') {
+            $emails = Emails::where('utilisateur', backpack_user()->id)->get()->sortByDesc('id');
+        } else {
+            $emails = Emails::all()->sortByDesc('id');
+        }
         return $emails;
     }
 
@@ -50,6 +59,7 @@ class GlobalController extends Controller
         //get the list of urls from the post request
         $urls = $request->input('urls');
         $secure = $request->input('secure');
+        $utilisateur = backpack_user()->id;
         //split the list of urls into an array
       
         //loop through the array of urls
@@ -62,6 +72,7 @@ class GlobalController extends Controller
                     $site = new Sites();
                     $site->url = $url;
                     $site->secure = $secure;
+                    $site->utilisateur = $utilisateur;
                     $site->save();
                 }
             }
@@ -75,6 +86,7 @@ class GlobalController extends Controller
         //get the list of urls from the post request
         $emails = $request->input('mails');
         $secure = $request->input('secure');
+        $utilisateur = backpack_user()->id;
         //split the list of emails into an array
       
         //loop through the array of emails
@@ -87,6 +99,7 @@ class GlobalController extends Controller
                     $site = new Emails();
                     $site->adresse = $email;
                     $site->secure = $secure;
+                    $site->utilisateur = $utilisateur;
                     $site->save();
                 }
             }

@@ -3,7 +3,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
-            <h3 class="text-center mb-4">{{ trans('backpack::base.register') }}</h3>
+            <h3 class="mb-4 text-center">{{ trans('backpack::base.register') }}</h3>
             <div class="card">
                 <div class="card-body">
                     <form class="col-md-12 p-t-6" role="form" method="POST" action="{{ route('backpack.auth.register') }}">

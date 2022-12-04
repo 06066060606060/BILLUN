@@ -78,7 +78,7 @@
                         <h1 class="py-4 text-lg font-black text-left">Secure your <span
                                 class="text-[#7923E4]">exchanges</span> and <span
                                 class="text-[#7923E4]">data</span></h1>
-                        <p class="mb-3 leading-relaxed text-left cropped">Quelles seraient les conséquences d’une perte de confidentialité de vos échanges emails ? Que se passerait-il si des attaquants avaient accès aux données que vous partagez, aux documents d’entreprise que vous envoyez et aux documents confidentiels que vous recevez ? Avec BILLUN, assurez-vous de sécuriser les échanges emails entre vos collaborateurs et entre votre organisation et l’extérieur. BILLUN veille à la confidentialité de vos échanges emails, de vos conversations et des données que vous partagez.</p>
+                        <p class="mb-3 leading-relaxed text-left cropped">What are the consequences of losing the confidentiality of your email exchanges? How would it look if attackers gained access to data you share, corporate documents you send and confidential documents you receive? With BILLUN, you can ensure that email exchanges are secure between your employees and between your organisation and the outside world. BILLUN keeps your emails, conversations and data confidential.</p>
                         <div x-data="{ modelOpen: false }">
 
                             <button @click="modelOpen =!modelOpen" id=""
@@ -106,13 +106,13 @@
                                         <div class="p-8 px-16 mt-6 mb-0 space-y-4 bg-white shadow-2xl rounded-3xl">
                                             <i class="float-right mt-5 mr-5 text-red-300 hover:text-red-600 fa fa-close fa-2x" @click="modelOpen = false"></i>
                                             <img class="object-cover object-center" alt="hero" src="./assets/API.png">
-                                            <p class="text-2xl font-black text-left">Sécurisez vos <span
-                                                class="text-[#7923E4]">échanges</span> email et vos <span
-                                                class="text-[#7923E4]">données</span></p>
+                                            <p class="text-2xl font-black text-left">Secure your email <span
+                                                class="text-[#7923E4]">exchanges</span> and <span
+                                                class="text-[#7923E4]">data</span></p>
                             
                                             <div class="relative mt-1">
                                                 <p class="max-w-screen-xl mt-4 mb-4 text-xl font-medium text-left text-black">
-                                                    Quelles seraient les conséquences d’une perte de confidentialité de vos échanges emails ? Que se passerait-il si des attaquants avaient accès aux données que vous partagez, aux documents d’entreprise que vous envoyez et aux documents confidentiels que vous recevez ? Avec BILLUN, assurez-vous de sécuriser les échanges emails entre vos collaborateurs et entre votre organisation et l’extérieur. BILLUN veille à la confidentialité de vos échanges emails, de vos conversations et des données que vous partagez.
+                                                    What are the consequences of losing the confidentiality of your email exchanges? How would it look if attackers gained access to data you share, corporate documents you send and confidential documents you receive? With BILLUN, you can ensure that email exchanges are secure between your employees and between your organisation and the outside world. BILLUN keeps your emails, conversations and data confidential.
                                                 </p>
                                             </div>
                                         </div>
@@ -128,7 +128,7 @@
                         <img class="object-cover object-center" alt="hero" src="./assets/Phishing.png">
                         <h1 class="pt-3 pb-4 text-lg font-black text-left">Protect yourself from <span
                                 class="text-[#7923E4]">identity theft</span></h1>
-                        <p class="mb-3 leading-relaxed text-left cropped"> Un fondateur dirigeant appelle le responsable financier de son organisation pour lui demander le virement d’une grosse somme d’argent afin de finaliser une transaction. Le virement est effectué dans la panique et finalement, lorsque la tension retombe, on s’apperçoit que tout cela n’était qu’une arnaque et que des millions se sont envolés. BILLUN vérifie pour vous l’identité des expéditeurs vous envoyant des emails et vous averti lorsque l’identité supposée de l’émeteur n’est pas correcte. Assurez-vous ainsi d’avoir à faire aux bons interlocuteurs et prémunissez-vous des risques d’usurpation d’identité dans votre organisation.</p>
+                        <p class="mb-3 leading-relaxed text-left cropped"> A founder/executive officer calls his organisation's financial officer to request a large sum of money to be transferred in order to complete a transaction. The money is transferred in a panic and finally, as the tension subsides, it becomes clear that it was all a scam and millions of dollars have been lost. BILLUN checks the identity of email senders for you and alerts you when the supposed identity of the sender is not correct. This way you can be sure that you are dealing with the right people and avoid the risk of identity theft in your organisation.</p>
                             <div x-data="{ modelOpen: false }">
 
                                 <button @click="modelOpen =!modelOpen" id=""
@@ -156,12 +156,12 @@
                                             <div class="p-8 px-16 mt-6 mb-0 space-y-4 bg-white shadow-2xl rounded-3xl">
                                                 <i class="float-right mt-5 mr-5 text-red-300 hover:text-red-600 fa fa-close fa-2x" @click="modelOpen = false"></i>
                                                 <img class="object-cover object-center" alt="hero" src="./assets/Phishing.png">
-                                                <p class="text-2xl font-black text-left">Prémunissez-vous des risques <span
-                                                    class="text-[#7923E4]">d’usurpation d’identité</span></p>
+                                                <p class="text-2xl font-black text-left">Protect yourself from <span
+                                                    class="text-[#7923E4]">identity theft</span></p>
                                 
                                                 <div class="relative mt-1">
                                                     <p class="max-w-screen-xl mt-4 mb-4 text-xl font-medium text-left text-black">
-                                                        Un fondateur dirigeant appelle le responsable financier de son organisation pour lui demander le virement d’une grosse somme d’argent afin de finaliser une transaction. Le virement est effectué dans la panique et finalement, lorsque la tension retombe, on s’apperçoit que tout cela n’était qu’une arnaque et que des millions se sont envolés. BILLUN vérifie pour vous l’identité des expéditeurs vous envoyant des emails et vous averti lorsque l’identité supposée de l’émeteur n’est pas correcte. Assurez-vous ainsi d’avoir à faire aux bons interlocuteurs et prémunissez-vous des risques d’usurpation d’identité dans votre organisation.
+                                                        A founder/executive officer calls his organisation's financial officer to request a large sum of money to be transferred in order to complete a transaction. The money is transferred in a panic and finally, as the tension subsides, it becomes clear that it was all a scam and millions of dollars have been lost. BILLUN checks the identity of email senders for you and alerts you when the supposed identity of the sender is not correct. This way you can be sure that you are dealing with the right people and avoid the risk of identity theft in your organisation.
                                                     </p>
                                                 </div>
                                             </div>
@@ -179,7 +179,7 @@
                         <img class="object-cover object-center" alt="hero" src="./assets/aide.png">
                         <h1 class="py-4 text-lg font-black text-left">Make sur not to click on <span
                                 class="text-[#7923E4]">malicious links</span></h1>
-                        <p class="mb-3 leading-relaxed text-left cropped"> Le principal risque en cybersécurité, c’est là où vous cliquez. BILLUN vous avertie lorsqu’un lien contenu dans un email est suspect, dangereux ou frauduleux. Un code couleur simple pour vous permettre de détecter, en un clin d’oeil, si votre navigation est sécurisée. Ainsi, vous vous assurez de ne naviguer que sur des sites officiels et de confiance, tout en veillant à la confidentialité et à la sécurité de vos données.</p>
+                        <p class="mb-3 leading-relaxed text-left cropped"> The main risk in cyber security is exactly where you click. BILLUN notifies you when a link in an email is suspicious, unsafe or fraudulent. A simple colour code enables you to see at a glance whether your browsing is safe. In this way, you can be sure that you are only surfing on official and trusted sites, while ensuring the confidentiality and security of your data.</p>
                             <div x-data="{ modelOpen: false }">
 
                                 <button @click="modelOpen =!modelOpen" id=""
@@ -207,12 +207,12 @@
                                             <div class="p-8 px-16 mt-6 mb-0 space-y-4 bg-white shadow-2xl rounded-3xl">
                                                 <i class="float-right mt-5 mr-5 text-red-300 hover:text-red-600 fa fa-close fa-2x" @click="modelOpen = false"></i>
                                                 <img class="object-cover object-center" alt="hero" src="./assets/aide.png">
-                                                <p class="text-2xl font-black text-left">Assurez-vous de ne pas cliquer sur un <span
-                                                    class="text-[#7923E4]">lien malveillant</span></p>
+                                                <p class="text-2xl font-black text-left">Make sure you don’t click on<span
+                                                    class="text-[#7923E4]">malicious link</span></p>
                                 
                                                 <div class="relative mt-1">
                                                     <p class="max-w-screen-xl mt-4 mb-4 text-xl font-medium text-left text-black">
-                                                        Le principal risque en cybersécurité, c’est là où vous cliquez. BILLUN vous avertie lorsqu’un lien contenu dans un email est suspect, dangereux ou frauduleux. Un code couleur simple pour vous permettre de détecter, en un clin d’oeil, si votre navigation est sécurisée. Ainsi, vous vous assurez de ne naviguer que sur des sites officiels et de confiance, tout en veillant à la confidentialité et à la sécurité de vos données.
+                                                        The main risk in cyber security is exactly where you click. BILLUN notifies you when a link in an email is suspicious, unsafe or fraudulent. A simple colour code enables you to see at a glance whether your browsing is safe. In this way, you can be sure that you are only surfing on official and trusted sites, while ensuring the confidentiality and security of your data.
                                                     </p>
                                                 </div>
                                             </div>

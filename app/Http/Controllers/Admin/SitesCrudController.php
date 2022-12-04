@@ -39,6 +39,9 @@ class SitesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        if (backpack_user()->role == 'user') {
+            $this->crud->addClause('where', 'utilisateur', '=', backpack_user()->id);
+        }
         $this->crud->addColumn([
             'name'    => 'secure',
             'label'   => 'Sécurisé',
@@ -58,7 +61,7 @@ class SitesCrudController extends CrudController
             ],
         ]);
         CRUD::column('url');
-        // CRUD::column('categorie');
+        //  CRUD::column('utilisateur');
         CRUD::column('updated_at')->label('Date');;
 
         /**
@@ -92,6 +95,9 @@ class SitesCrudController extends CrudController
             'default'     => 'one',
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
+        $entry = backpack_user()->id;
+        CRUD::field('utilisateur')->type('hidden')->value($entry);
+        // CRUD::field('utilisateur');
         // $this->crud->addField([   // select_from_array
         //     'name'        => 'pays',
         //     'label'       => "Pays",
@@ -119,7 +125,7 @@ class SitesCrudController extends CrudController
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
+        
          * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
          */
     }

@@ -40,33 +40,33 @@
                     <div class="flex w-full">
                         <div class="flex flex-col w-1/2 px-2">
 
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
                         </div>
                         <div class="flex flex-col w-1/2">
 
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
-                            <input type="text" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
+                            <input type="email" name="mails[]" class="my-1 form-control">
                         </div>
                     </div>
                 </div>

@@ -39,6 +39,9 @@ class EmailsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        if (backpack_user()->role == 'user') {
+            $this->crud->addClause('where', 'utilisateur', '=', backpack_user()->id);
+        }
         $this->crud->addColumn([
             'name'    => 'secure',
             'label'   => 'Sécurisé',
@@ -79,6 +82,11 @@ class EmailsCrudController extends CrudController
         CRUD::setValidation(EmailsRequest::class);
 
         CRUD::field('adresse');
+        $this->crud->addField([
+            'name'  => 'adresse', // The db column name
+            'label' => 'adresse email', // Table column heading
+            'type'  => 'email',
+        ]);
         $this->crud->addField(
             [   // select_from_array
             'name'        => 'secure',
@@ -92,6 +100,8 @@ class EmailsCrudController extends CrudController
             'default'     => 'one',
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
+        $entry = backpack_user()->id;
+        CRUD::field('utilisateur')->type('hidden')->value($entry);
         // $this->crud->addField([   // select_from_array
         //     'name'        => 'categorie',
         //     'label'       => "Categories",

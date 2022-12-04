@@ -64,50 +64,52 @@
             </div>
 
         </div>
-        <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-96 md:ml-4 shadow-md shadow-black">
-
-            <div class="flex flex-col w-full mx-1 overflow-auto">
-                <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Derniéres Inscriptions
-                </h1>
-                <table class="divide-y ">
-                    <thead class="">
-                        <tr class="border-b border-gray-500 ">
-                            <th scope="col"
-                                class="pb-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase ">
-                                Nom
-                            </th>
-                            <th scope="col"
-                                class="pb-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                                Email
-                            </th>
-                            <th scope="col"
-                                class="pb-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                                Role
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody class="">
-
-                        @foreach ($users as $user)
-                            <tr class="mx-2 border-b border-gray-500">
-                                <td
-                                    class="max-w-[200px] p-4 text-sm font-normal text-gray-300 whitespace-nowrap time-container  overflow-hidden">
-                                    {{ $user->name }}
-                                </td>
-                                <td
-                                    class="xl:max-w-[230px] max-w-[165px]  p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container overflow-hidden">
-                                    {{ $user->email }}
-                                </td>
-                                <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
-                                    {{ $user->role }}
-                                </td>
+        @if (backpack_user()->role == 'admin')
+            <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-96 md:ml-4 shadow-md shadow-black">
+                <div class="flex flex-col w-full mx-1 overflow-auto">
+                    <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Derniéres
+                        Inscriptions
+                    </h1>
+                    <table class="divide-y ">
+                        <thead class="">
+                            <tr class="border-b border-gray-500 ">
+                                <th scope="col"
+                                    class="pb-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase ">
+                                    Nom
+                                </th>
+                                <th scope="col"
+                                    class="pb-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                    Email
+                                </th>
+                                <th scope="col"
+                                    class="pb-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                    Role
+                                </th>
                             </tr>
-                        @endforeach
+                        </thead>
+                        <tbody class="">
 
-                    </tbody>
-                </table>
+                            @foreach ($users as $user)
+                                <tr class="mx-2 border-b border-gray-500">
+                                    <td
+                                        class="max-w-[200px] p-4 text-sm font-normal text-gray-300 whitespace-nowrap time-container  overflow-hidden">
+                                        {{ $user->name }}
+                                    </td>
+                                    <td
+                                        class="xl:max-w-[230px] max-w-[165px]  p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container overflow-hidden">
+                                        {{ $user->email }}
+                                    </td>
+                                    <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
+                                        {{ $user->role }}
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
+        @endif
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.js"
             integrity="sha512-jG3l4wynNj06R0w9JW1WZaCDPvhqa4yz8EAVjYzWqibarcn8JeFDyNtUytcr7Idx+laN7OQDaoDNmUAI4nB1qA=="
@@ -127,17 +129,19 @@
                 <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
                     Nombre d'adresse email enregistrés : {{ $emails->count() }}
                 </div>
-                <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
-                    Nombre d'utilisateurs : {{ $users->count() }}
-                </div>
+                @if (backpack_user()->role == 'admin')
+                    <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
+                        Nombre d'utilisateurs : {{ $users->count() }}
+                    </div>
+                @endif
                 <div class="px-4 py-1 text-sm text-gray-300 whitespace-nowrap time-container">
-                @php $urls = env('APP_URL')&'/api/Site/Control' @endphp
+                    @php $urls = env('APP_URL')&'/api/Site/Control' @endphp
                     @if (curl_init($urls) !== false)
-                       API Online  <span class="px-2 py-1 text-xs font-medium leading-4 text-green-800 rounded-full">
-                         <i class="las la-check la-2x"></i>
+                        API Online <span class="px-2 py-1 text-xs font-medium leading-4 text-green-800 rounded-full">
+                            <i class="las la-check la-2x"></i>
                         </span>
                     @else
-                        API Offline  <span class="px-2 py-1 text-xs font-medium leading-4 text-red-800 rounded-full">
+                        API Offline <span class="px-2 py-1 text-xs font-medium leading-4 text-red-800 rounded-full">
                             <i class="las la-times la-2x"></i>
                         </span>
                     @endif
@@ -145,13 +149,14 @@
             </div>
 
         </div>
-        <div class="flex flex-col md:w-1/2 bg-[#111827] rounded-xl h-64 md:ml-4 shadow-md shadow-black">
-            <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Historique
-            </h1>
-            <div class="h-48 ct-chart ct-perfect-fourth"></div>
+        @if (backpack_user()->role == 'admin')
+            <div class="flex flex-col md:w-1/2 bg-[#111827] rounded-xl h-64 md:ml-4 shadow-md shadow-black">
+                <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Historique
+                </h1>
+                <div class="h-48 ct-chart ct-perfect-fourth"></div>
 
-        </div>
-
+            </div>
+        @endif
 
     </section>
 

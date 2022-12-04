@@ -18,11 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('OpenAI_API_Key')->nullable();
-            $table->string('TWITTER_CONSUMER_KEY')->nullable();
-            $table->string('TWITTER_CONSUMER_SECRET')->nullable();
-            $table->string('TWITTER_ACCESS_TOKEN')->nullable();
-            $table->string('TWITTER_ACCESS_TOKEN_SECRET')->nullable();
             $table->string('role')->default('user0');
             $table->rememberToken();
             $table->timestamps();
