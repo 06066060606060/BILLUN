@@ -156,7 +156,7 @@
         @if (backpack_user()->role == 'admin')
             <div class="flex flex-col md:w-1/2 bg-[#111827] rounded-xl h-72 md:ml-4 shadow-md shadow-black">
             
-                <div id="chartContainer" class=" flex w-[80%] h-72 mx-auto my-2 z-0">
+                <div id="chartContainer" class="z-0 flex mx-auto my-2  w-72 h-72">
 
             </div>
         @endif
