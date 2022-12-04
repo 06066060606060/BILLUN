@@ -26,6 +26,7 @@ class GlobalController extends Controller
     //function to add +1 to settings table
     public function download()
     {
+    
         $settings = Settings::where('id', 1);
         $settings->increment('request');
 
@@ -56,18 +57,18 @@ class GlobalController extends Controller
     static function getSitesecure()
     {
         //retrive all sites
-     
-            $sitesecure = Sites::where('secure', 1)->get();
-        
+
+        $sitesecure = Sites::where('secure', 1)->get();
+
         return $sitesecure;
     }
 
     static function getSitesinsecure()
     {
         //retrive all sites
-     
-            $sitesinsecure = Sites::where('secure', 0)->get();
-        
+
+        $sitesinsecure = Sites::where('secure', 0)->get();
+
         return $sitesinsecure;
     }
 

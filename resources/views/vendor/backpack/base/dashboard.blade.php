@@ -131,7 +131,9 @@
                     Nombre d'adresse email enregistrés : {{ $emails->count() }}
                 </div>
                 <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
-                    Nombre de téléchargements: {{ $settings }}
+                   Nombre de téléchargement local : {{ $settings }}
+                </div>
+                <div id="totaldown" class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
                 </div>
                 @if (backpack_user()->role == 'admin')
                     <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
@@ -155,38 +157,38 @@
         </div>
         @if (backpack_user()->role == 'admin')
             <div class="flex flex-col md:w-1/2 bg-[#111827] rounded-xl h-72 md:ml-4 shadow-md shadow-black">
-            
-                <div id="chartContainer" class="z-0 flex mx-auto my-2  w-72 h-72">
 
-            </div>
+                <div id="chartContainer" class="z-0 flex mx-auto my-2 w-72 h-72">
+
+                </div>
         @endif
 
     </section>
 
 
-
-
-
-
-
-
-
-
-
     <script>
+var chromeExtensionWebstoreURL = 'https://chrome.google.com/webstore/detail/billun/ecodhgndejkcckkabdnigikdcdhchfgc';
+
+$.getJSON('https://www.whateverorigin.org/get?url=' + encodeURIComponent(chromeExtensionWebstoreURL) + '&callback=?', function(response){
+    var numUsers = ((""+response.contents.match(/<span class="e-f-ih" title="([\d]*?) users">([\d]*?) users<\/span>/)).split(",")[2]);
+    
+    document.getElementById("totaldown").innerHTML =  "Nombre de téléchargement WebStore: " + numUsers;
+});
+
+
         window.onload = function() {
 
             //chart 1 donut
             var chart = new CanvasJS.Chart("chartContainer", {
                     backgroundColor: "#111827",
                     animationEnabled: true,
-                
+
                     data: [{
                         type: "doughnut",
                         showInLegend: true,
                         startAngle: 270,
                         innerRadius: 80,
-                        
+
                         dataPoints: [{
                                 y: {{ $sitesecure->count() }},
                                 name: "Sécurisé",
@@ -241,6 +243,5 @@
             display: none;
 
         }
-        
     </style>
 @endsection
