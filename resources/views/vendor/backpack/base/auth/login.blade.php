@@ -3,11 +3,12 @@
 @section('main')
     <div class="flex h-screen">
         <div class="hidden w-1/2 mybackground md:flex">
+                            <img class="w-auto h-48 pb-8 mx-auto mt-32" src="../assets/computer1.gif">
         </div>
         <div class="flex flex-col w-full py-24 lg:w-1/2">
             <div class="mx-16">
               
-                    <img class="w-1/3 h-auto pb-8 mx-auto" src="../assets/computer1.gif">
+
                   <h1 class="text-3xl font-bold text-center text-gray-800"><a href="/" class="text-[#7C69EF]">Billun</a> Dashboard</h1>
                 <div class="flex flex-col items-center justify-center p-4">
                     <form class="" role="form" method="POST" action="{{ route('backpack.auth.login') }}">
