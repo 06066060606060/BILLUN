@@ -321,7 +321,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             csrf: $('meta[name="csrf-token"]').attr('content'),
-            url: 'http://127.0.0.1:8000/download',
+            url: 'https://billun.com/download',
             method: 'POST',
         });
     });
