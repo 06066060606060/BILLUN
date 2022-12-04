@@ -112,9 +112,7 @@
             </div>
         @endif
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.js"
-            integrity="sha512-jG3l4wynNj06R0w9JW1WZaCDPvhqa4yz8EAVjYzWqibarcn8JeFDyNtUytcr7Idx+laN7OQDaoDNmUAI4nB1qA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
     </section>
 
@@ -155,9 +153,7 @@
         </div>
         @if (backpack_user()->role == 'admin')
             <div class="flex flex-col md:w-1/2 bg-[#111827] rounded-xl h-64 md:ml-4 shadow-md shadow-black">
-                <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Historique
-                </h1>
-                <div class="h-48 ct-chart ct-perfect-fourth"></div>
+                  <div id="chartContainer" class="flex w-[80%] h-64 mx-auto my-2 "></div>
 
             </div>
         @endif
@@ -175,67 +171,25 @@
 
 
     <script>
-        window.onload = function() {
-            // chart 2 bar
+       window.onload = function () {
 
-            new Chartist.Bar('.ct-chart', {
-                labels: ['September', 'October', 'November'],
-                series: [{
-                        className: "stroke-blue",
-                        data: [450, 220, 180]
-                    },
-                    {
-                        className: "stroke-black",
-                        data: [100, 420, 40]
-                    },
-                    {
-                        className: "stroke-grayd",
-                        data: [390, 170, 280]
-                    },
-                    {
-                        className: "stroke-grayl",
-                        data: [300, 520, 310]
-                    },
-                ]
-            }, {
-                // Default mobile configuration
-                stackBars: true,
-                axisX: {
-                    labelInterpolationFnc: function(value) {
-                        return value.split(/\s+/).map(function(word) {
-                            return word[0];
-                        }).join('');
-                    }
-                },
-                axisY: {
-                    offset: 20
-                }
-            }, [
-                // Options override for media > 400px
-                ['screen and (min-width: 300px)', {
-                    reverseData: false,
-                    horizontalBars: false,
-                    stackBars: false,
-                    axisX: {
-                        labelInterpolationFnc: Chartist.noop
-                    },
-                    axisY: {
-                        offset: 60
-                    }
-                }],
-                // Options override for media > 800px
-                ['screen and (min-width: 800px)', {
-                    stackBars: false,
-                    seriesBarDistance: 10
-                }],
-                // Options override for media > 1000px
-                ['screen and (min-width: 1000px)', {
-                    reverseData: false,
-                    horizontalBars: false,
-                    seriesBarDistance: 30
+            //chart 1 donut
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                data: [{
+                    type: "doughnut",
+                    showInLegend: true,
+                    startAngle: 270,
+                    innerRadius: 80,
+                    dataPoints: [
+                        { y: 75, name: "Sécurisé", color: "#14CE1B" },
+                        { y: 25, name: "Non Sécurisé", color: "#211F20" },
+
+                    ]
                 }]
-            ]);
-        }
+            });
+            chart.render();
+        };
     </script>
     <style>
         * {
@@ -262,33 +216,6 @@
             border: 3px solid #05070C;
         }
 
-
-
-        .ct-label .ct-horizontal .ct-end {
-            fill: white;
-        }
-
-        .ct-chart .ct-series.stroke-blue .ct-bar {
-            stroke: #1E9FD9;
-        }
-
-        .ct-chart .ct-series.stroke-black .ct-bar {
-            stroke: rgb(0, 0, 0);
-        }
-
-        .ct-chart .ct-series.stroke-grayd .ct-bar {
-            stroke: rgba(73, 73, 73, 0.8);
-        }
-
-        .ct-chart .ct-series.stroke-grayl .ct-bar {
-            stroke: rgba(164, 164, 164, 0.8);
-        }
-
-        .ct-label {
-            margin-top: 10px;
-            font-size: 18px;
-        }
-
         .canvasjs-chart-credit {
             display: none;
         }
@@ -297,8 +224,5 @@
             display: none;
         }
 
-        .ct-label {
-            color: white;
-        }
     </style>
 @endsection
