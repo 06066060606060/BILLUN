@@ -26,7 +26,8 @@ return [
     |    ]
     */
     'disks' => [
-        // 'uploads',
+         'uploads',
+         'public',
     ],
 
     /*
