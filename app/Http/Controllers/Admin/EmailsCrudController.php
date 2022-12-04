@@ -39,7 +39,24 @@ class EmailsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('secure')->label('Sécurisé')->type('boolean');
+        $this->crud->addColumn([
+            'name'    => 'secure',
+            'label'   => 'Sécurisé',
+            'type'    => 'boolean',
+            'options' => [0 => 'Non', 1 => 'Oui'], // optional
+            'wrapper' => [
+                'element' => 'span',
+                'class' => function ($crud, $column, $entry, $related_key) {
+                    if ($column['text'] == 'Oui') {
+                        return 'badge badge-success';
+                    } else {
+                        return 'badge badge-danger';
+                    }
+        
+                    return 'badge badge-default';
+                },
+            ],
+        ]);
         CRUD::column('adresse');
         // CRUD::column('categorie');
         CRUD::column('updated_at')->label('Date');;
