@@ -340,11 +340,11 @@
                                 <div class="w-full pt-2 mt-2">
                                     <div class="flex">
                                         <input type="checkbox" name="operation" value="0" class="mb-20 mr-4" id="checkme" required>
-                                        I agree <span class="text-[#2F42EB] font-semibold">Billun</span> process my data in order to respond to my request.*<br>
-                                    <br>
-                                     For more information, we invite you to read the <span
+                                        <p class="text-xs leading-relaxed text-left">
+                                            I agree <span class="text-[#2F42EB] font-semibold">Billun</span> process my data in order to respond to my request.*<br>
+                                            <br>
+                                             For more information, we invite you to read the <span
                                         class="text-[#2F42EB] font-semibold" onclick="document.getElementById('primaryButton').click()">Privacy Policy</span>, or send an email requesting information.
-                                </p>
                                         </p>
                                     </div>
                                 </div>
