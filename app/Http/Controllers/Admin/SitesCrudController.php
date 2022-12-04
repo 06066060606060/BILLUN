@@ -39,7 +39,7 @@ class SitesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('secure')->label('Verifié')->type('boolean');
+        CRUD::column('secure')->label('Sécurisé')->type('boolean');
         CRUD::column('url');
         // CRUD::column('categorie');
         CRUD::column('updated_at')->label('Date');;

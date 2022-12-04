@@ -17,6 +17,11 @@ class GlobalController extends Controller
         return view('index');
     }
 
+    public function indexen()
+    {
+        return view('en');
+    }
+
     static function getUsers()
     {
         //retrive all users

@@ -15,32 +15,27 @@
         <div class="container px-5 mx-auto py-18">
             <div class="flex flex-wrap w-full mx-auto mt-48 lg:flex-nowrap md:justify-center">
                 <div class="w-full mb-6 lg:w-1/2 lg:pr-16 lg:py-6 lg:mb-0 ">
-                    <h1 class="z-50 mb-4 text-3xl font-bold leading-tight text-gray-900 md:text-5xl title-font">NAVIGUEZ SUR
-                        INTERNET
-                        <span style="color: #2F42EB">EN TOUTE SÉCURITÉ</span>
+                    <h1 class="z-50 mb-4 text-3xl font-bold leading-tight text-gray-900 md:text-5xl title-font">NBROWSE THE WEB
+                        <span style="color: #2F42EB">SAFELY</span>
                     </h1>
                     <ul role="list" class="pt-6 mt-4 text-lg font-medium md:text-xl align-center">
                         <li class="flex">
                             <div class="inline-flex items-center w-10 h-10 my-4 rounded-xl">
                                 <img class="w-8 h-8 mb-8 mr-8" src="./assets/check.png" alt="">
                             </div>
-                            <span class="ml-3 text-lg font-bold text-left md:text-2xl">Profitez d'un web plus sûr</span>
+                            <span class="ml-3 text-lg font-bold text-left md:text-2xl">Experience a safer surfing experience</span>
                         </li>
                         <li class="flex">
                             <div class="inline-flex items-center w-10 h-10 my-4 rounded-xl">
                                 <img class="w-8 h-8 mb-8 mr-8" src="./assets/check.png" alt="">
                             </div>
-                            <span class="ml-3 text-lg font-bold text-left md:text-2xl">Naviguez seulement sur des sites
-                                web
-                                certifiés </span>
+                            <span class="ml-3 text-lg font-bold text-left md:text-2xl">Browse only on certified websites </span>
                         </li>
                         <li class="flex">
                             <div class="inline-flex items-center w-10 h-10 my-4 rounded-xl">
                                 <img class="w-8 h-8 mb-8 mr-8" src="./assets/check.png" alt="">
                             </div>
-                            <span class="ml-3 text-lg font-bold text-left md:text-2xl">Billun est gratuit et disponible
-                                sur tous
-                                les navigateurs</span>
+                            <span class="ml-3 text-lg font-bold text-left md:text-2xl">BILLUN is free and available on all browsers</span>
                         </li>
                     </ul>
 
@@ -49,14 +44,12 @@
                             class="flex mt-8">
                             <button
                                 class="flex px-6 py-4 ml-2 mr-auto font-bold text-white border-0 rounded-full shadow-xl mycolor focus:outline-none hover:bg-indigo-600"><span
-                                    class="pt-2 text-xs md:pt-1 md:text-base">OBTENEZ BILLUN POUR CHROME</span> <img class="w-8 h-8 ml-2"
+                                    class="pt-2 text-xs md:pt-1 md:text-base">GET BILLUN FOR CHROME</span> <img class="w-8 h-8 ml-2"
                                     src="./assets/chrome0.png" alt=""></button>
                         </a>
                     </div>
                     <div class="flex pt-4 md:py-8">
-                        <a href="#download" class="ml-3 my-2 text-lg font-bold underline text-[#2F42EB]">Télécharger
-                            BILLUN pour
-                            un autre navigateur</a>
+                        <a href="#download" class="ml-3 my-2 text-lg font-bold underline text-[#2F42EB]">Download BILLUN for another browser</a>
                     </div>
                 </div>
                 <div class="">
@@ -74,43 +67,32 @@
     <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
         <div class="max-w-screen-xl mx-auto">
             <h1 class="pb-8 text-4xl font-extrabold text-center text-black">
-                Q'est ce que le <span class="text-[#2F42EB]">Phishing</span> ?
+                What is <span class="text-[#2F42EB]">Phishing</span> ?
             </h1>
             <div class="p-8 mt-6 mb-0 space-y-4 shadow-2xl rounded-3xl">
                 <img class="object-cover object-center" alt="hero" src="./assets/Phishing.png">
-                <p class="text-2xl font-black">Protection contre le phishing</p>
+                <p class="text-2xl font-black">Protection against phishing</p>
 
                 <div class="relative mt-1">
                     <p class="max-w-screen-xl mt-4 text-sm font-medium text-black md:text-lg">
-                        Le phishing (ou hameçonnage en français) est une technique <span
-                            class="text-[#2F42EB] font-semibold">d’attaque qui vise à voler vos informations
-                            personnelles</span>
-                        (identifiants de connexion, informations personnelles et/ou confidentielles, codes d’accès en
-                        tout genre, ou encore informations bancaires), et<span class="text-[#2F42EB] font-semibold"> ce
-                            bien souvent
-                            en se faisant passer pour un tiers de confiance</span>.
+                        Phishing is <span
+                            class="text-[#2F42EB] font-semibold">an attempt to obtain your personal information</span>
+                        (login details, personal and/or confidential information, all kinds of access codes, or even banking information), very often by pretending to be a trusted third party.
                         <br>
                         &nbsp; <br>
-                        En pratique, les attaquants construisent des sites internet qui sont de véritables copies
-                        conformes des sites officiels : le site internet de votre banque, de la CAF, de l’URSSAF, de
-                        votre compte CPF et de tous vos espaces de connexion en ligne en tout genre. <br>
+                       Attackers<span
+                            class="text-[#2F42EB] font-semibold"> build websites that are identical copies of official websites : </span>the website of your bank, the CAF, the URSSAF, your CPF account and all of your online connection spaces of all kinds. <br>
                         &nbsp; <br>
 
-                        Pourquoi ? Parce que ces comptes en ligne regorgent d’informations personnelles ayant une grande
-                        valeur marchande aux yeux des attaquants. <br>
+                        Why? Because, in the eyes of the attackers, these online accounts are full of personal information with a high market value.<br>
                         &nbsp; <br>
 
-                        On vous invite donc à vous connecter ou à communiquer des informations personnelles sur un site
-                        frauduleux : votre nom, votre prénom, des informations personnelles, bancaires et pourquoi pas
-                        des documents d’identité ! Toutes ces informations entrées sur des sites frauduleux sont ensuite
-                        accessibles par les cyber attaquants et donc compromises. <br>
+                       You are therefore encouraged to log in or provide personal information on a fraudulent site: your name, your first name, personal and banking information and even your identity documents! All of this information input on fraudulent sites is then accessible by cyber attackers and thus compromised. <br>
                         &nbsp; <br>
 
-                        La majorité des compromissions de données et cyber attaques sont dûes au <span
-                            class="text-[#2F42EB] font-semibold">facteur humain</span> et au <span
-                            class="text-[#2F42EB] font-semibold">manque de
-                            vigilance</span>. Et le mail reste le moyen le plus sûr pour tromper votre vigilance et
-                        ainsi voler vos données ou vos extorquer de l’argent.
+                       
+Most of the data breaches and cyber attacks are caused by the human factor and the lack of vigilance. And email remains the most secure way to deceive your attention and thus<span
+                            class="text-[#2F42EB] font-semibold"> steal your data or extort your money from you. </span>
                     </p>
                 </div>
             </div>
@@ -123,13 +105,12 @@
     <div class="max-w-screen-xl px-4 py-16 mx-auto">
         <div class="flex flex-col justify-center max-w-screen-xl mx-auto align-center">
             <p class="max-w-3xl pb-8 mx-auto text-4xl font-extrabold text-center text-black">
-                Votre <span class="text-[#2F42EB]">vigilance</span> est votre première <span
-                    class="text-[#2F42EB]">protection</span> face aux cyber attaques.
+                Your <span class="text-[#2F42EB]">alertness </span> is your first line of <span
+                    class="text-[#2F42EB]">protection</span> against cyber attack..
             </p>
 
             <p class="max-w-5xl pt-8 pb-4 mx-auto text-2xl font-medium text-center text-black">
-                Alors BILLUN <span class="text-[#2F42EB]">s’assure pour vous de la sécurité des sites internet que vous
-                    visitez</span> pour vous garantir une navigation sécurisée.
+                 <span class="text-[#2F42EB]"> ensures for you the security of the websites</span> you visit to guarantee you a safe browsing.
             </p>
         </div>
     </div>
@@ -138,7 +119,7 @@
 <section class="container relative p-6 mx-auto">
     <div class="max-w-screen-xl px-4 pt-8 pb-16 mx-auto lg:px-2">
         <h1 class="pb-8 text-4xl font-extrabold text-center text-black">
-            Navigation sécurisée avec <span class="text-[#2F42EB]">BILLUN</span> !
+           Secured navigation thanks to <span class="text-[#2F42EB]">BILLUN</span> !
         </h1>
         <div class="flex flex-wrap w-full mx-auto mt-16 lg:flex-nowrap md:mt-16 md:justify-center">
         	<div class="shape-blob"></div>
@@ -154,41 +135,37 @@
                         <div class="flex my-4">
                             <img class="w-8 h-8 mr-4" src="./assets/check.png" alt="">
                         </div>
-                        <span class="mt-5 ml-3 font-medium text-left">Profitez d'un web plus sûr</span>
+                        <span class="mt-5 ml-3 font-medium text-left">Enjoy a more secure web </span>
                     </li>
                     <li class="flex">
                         <div class="my-4 ">
                             <img class="w-8 h-8 mr-4" src="./assets/check.png" alt="">
                         </div>
-                        <span class="mt-5 ml-3 font-medium text-left">Naviguez seulement sur des sites web
-                            certifiés </span>
+                        <span class="mt-5 ml-3 font-medium text-left">Browse only on certified websites </span>
                     </li>
                     <li class="flex">
                         <div class="my-4 ">
                             <img class="w-8 h-8 mr-4" src="./assets/check.png" alt="">
                         </div>
-                        <span class="mt-5 ml-3 font-medium text-left">Protégez vos données personnelles</span>
+                        <span class="mt-5 ml-3 font-medium text-left">Protect your personal data </span>
                     </li>
                     <li class="flex">
                         <div class="my-4 ">
                             <img class="w-8 h-8 mr-4" src="./assets/check.png" alt="">
                         </div>
-                        <span class="mt-5 ml-3 font-medium text-left">Extention gratuite & disponible sur tous les
-                            navigateurs</span>
+                        <span class="mt-5 ml-3 font-medium text-left"> Free extension & available on all browsers</span>
                     </li>
                     <li class="flex">
                         <div class="my-4 ">
                             <img class="w-8 h-8 mr-4" src="./assets/check.png" alt="">
                         </div>
-                        <span class="mt-5 ml-3 font-medium text-left">Compréhension facilitée grâce au code
-                            couleurs</span>
+                        <span class="mt-5 ml-3 font-medium text-left"> Easy to understand thanks to the color code</span>
                     </li>
                     <li class="flex">
                         <div class="my-4 ">
                             <img class="w-8 h-8 mr-4" src="./assets/check.png" alt="">
                         </div>
-                        <span class="mt-5 ml-3 font-medium text-left ">Assurez-vous de naviguer sur les sites officiels
-                            et de confiance</span>
+                        <span class="mt-5 ml-3 font-medium text-left "> Make sure you're only browsing official and trusted sites</span>
                     </li>
                 </ul>
 
@@ -199,7 +176,7 @@
 
 <section id="download" class="w-full mt-12 bg-blue-700 wave">
     <h1 class="pt-12 mx-4 text-4xl font-extrabold text-center text-white">
-        Une extention gratuite et disponible sur tous les<br> navigateurs
+       The free extension is available on all <br>browsers
     </h1>
     <div class="flex flex-col items-center justify-center w-3/4 pt-12 pb-12 mx-auto">
         <div
@@ -216,16 +193,15 @@
 
 <section class="w-full mt-12">
     <h1 class="pt-12 text-4xl font-extrabold text-center">
-        Certifiez votre site web avec <span class="text-[#2F42EB]">BILLUN</span>
+        Certifiy your website with  <span class="text-[#2F42EB]">BILLUN</span>
     </h1>
     <div class="flex flex-col items-center justify-center w-3/4 pt-6 pb-12 mx-auto md:pt-12">
 
         <div class="container py-12">
             <div class="lg:flex">
                 <div class="w-full mx-auto md:w-1/2">
-                    <h1 class="pt-16 text-3xl font-bold lg:text-2xl lg:pl-16">Si vous souhaitez faire <span
-                            class="text-[#2F42EB]">certifier votre site web</span> ou <br> contester l'ajout de votre
-                        site sur liste rouge,<span class="text-[#2F42EB]">veuillez <br>remplir</span> le formulaire</h1>
+                    <h1 class="pt-16 text-3xl font-bold lg:text-2xl lg:pl-16">If you'd like <span
+                            class="text-[#2F42EB]"> certify your website </span> or <br> contest the redlisting of your site,<span class="text-[#2F42EB]"> please fill out the form. <br></span></h1>
                     <img class="object-cover object-center mx-auto billy" alt="hero" src="./assets/billy.gif">
 
                 </div>
@@ -233,27 +209,27 @@
 
                 <div
                     class="z-10 w-full md:w-3/4 px-2 py-8 mx-auto overflow-hidden bg-white rounded-[50px] shadow-lg shadow-gray-400  lg:max-w-lg mt-8 min-w-[310px] pr-4">
-                    <h1 class="text-xl font-extrabold text-[#2F42EB] ml-4">Formulaire *</h1>
+                    <h1 class="text-xl font-extrabold text-[#2F42EB] ml-4">Form *</h1>
 
                     <form action="contact" class="z-10 p-4 pt-4 mt-2 text-lg md:p-8" method="POST" >
                     @csrf
                         <div class="flex">
                             <input type="text" name="nom" placeholder="Nom" 
                                 class="block w-[40%] px-5 py-2 mt-2 mr-8 text-gray-700 placeholder-gray-400 bg-gray-200  rounded-xl  focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" required />
-                            <input type="text" name="prenom" placeholder="Prénom"
+                            <input type="text" name="prenom" placeholder="Last Name"
                                 class="block w-[40%] px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-gray-200  rounded-xl  focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" />
                         </div>
                         <div class="flex-1 pt-2 mt-2">
-                            <input type="text" name="societe" placeholder="Société"
+                            <input type="text" name="societe" placeholder="Company"
                                 class="block w-3/4 px-5 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-gray-200 rounded-xl focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" />
                         </div>
                         <div class="flex-1 mt-2 pt-2.5">
-                            <input type="email" name="email" placeholder="Email" required
+                            <input type="email" name="email" placeholder="E-mail" required
                                 class="block w-3/4 px-5 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-gray-200 rounded-xl focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" />
                         </div>
 
                         <div class="flex-1 pt-2 mt-2">
-                            <input type="text" name="siteweb" placeholder="Lien vers votre site web"
+                            <input type="text" name="siteweb" placeholder="Your website"
                                 class="block w-3/4 px-5 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-gray-200 rounded-xl focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" />
                         </div>
 
@@ -266,19 +242,17 @@
                             <div class="flex">
                                 <input type="checkbox" name="operation" value="0" class="mb-20 mr-4" id="checkme"  required>
                                 <p class="text-xs leading-relaxed text-left">
-                                    J'accepte que <span class="text-[#2F42EB] font-semibold">Billun</span> traite mes
-                                    données afin de répondre à ma demande.*<br>
+                                    I agree <span class="text-[#2F42EB] font-semibold">Billun</span> process my data in order to respond to my request.*<br>
                                     <br>
-                                    Pour plus d’informations, nous vous invitons à lire la <span
-                                        class="text-[#2F42EB] font-semibold" onclick="document.getElementById('primaryButton').click()">Politique de
-                                        Confidentialité</span>, ou à envoyer un mail de demande d’information.
+                                     For more information, we invite you to read the <span
+                                        class="text-[#2F42EB] font-semibold" onclick="document.getElementById('primaryButton').click()">Privacy Policy</span>, or send an email requesting information.
                                 </p>
                             </div>
                         </div>
                         <div class="flex flex-col items-center pt-2 align-middle">
                             <button id="sendNew" type="submit"
                                 class="w-3/4 px-6 py-2 mt-6 font-bold tracking-wide text-white capitalize transition-colors duration-300 transform rounded-full shadow mycolor focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-                                Envoyer le message
+                                Send message
                             </button>
                         </div>
 
@@ -290,7 +264,8 @@
 
     </div>
 </section>
-  @include('parts.footer')
+
+  @include('parts.footer_en')
 <style>
     .billy {
         -webkit-transform: scaleX(-1);

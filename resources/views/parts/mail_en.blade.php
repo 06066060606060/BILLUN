@@ -7,21 +7,19 @@
     <div class="flex flex-col pt-24 ">
         <div class="mx-auto div ">
             <h1 class="flex flex-col mb-4 space-y-4 text-3xl font-extrabold text-white md:text-5xl myshadowDark">
-                <div>PROTÉGEZ-VOUS <span style="color: #EE007E">FACE</span></div>
-                <div>AUX <span style="color: #EE007E">EMAILS </span></div>
-                <div>FRAUDULEUX</div>
+                <div>PROTECT</div><div> YOURSELF<span style="color: #EE007E"> AGAINST</span></div>
+                <div> EMAILS </div>
+                <div><span style="color: #EE007E">SCAMS</span></div>
             </h1>
             <P class="flex">
-                <span class="py-8 text-lg font-bold text-left text-white md:text-2xl myshadowDark">L'email est le
-                    premier
-                    vecteur de
-                    <span style="color: #EE007E">cyber attaque </span><br> en entreprise.</span>
+                <span class="py-8 text-lg font-bold text-left text-white md:text-2xl myshadowDark">E-mail is the primary vector of
+                    <span style="color: #EE007E">cyber attacks </span><br> in organizations.</span>
             </P>
             <div class="flex pt-4">
                 <a href="https://chrome.google.com/webstore/detail/billun/ecodhgndejkcckkabdnigikdcdhchfgc">
                     <button
                         class="flex mr-auto text-white font-bold bg-[#EE007E] hover:bg-opacity-80 border-0 py-3 px-12 focus:outline-none rounded-full shadow shadow-gray-400"><span
-                            class="">Réserver une démo ></span> </button>
+                            class="">Book a demo ></span> </button>
                 </a>
             </div>
         </div>
@@ -41,7 +39,7 @@
         <div class="max-w-screen-xl mx-auto">
             <p class="text-xl py-4 font-black text-[#7923E4]">SOCIAL ENGINEERING</p>
             <h1 class="pb-8 text-4xl font-extrabold text-left text-black">
-                Qu'est ce que le <span class="text-[#7923E4]">SOCIAL ENGINEERING</span>?
+                What is <span class="text-[#7923E4]">SOCIAL ENGINEERING</span>?
             </h1>
             <div class="p-8 px-16 mt-6 mb-0 space-y-4 shadow-2xl rounded-3xl">
                 <img class="object-cover object-center" alt="hero" src="./assets/API.png">
@@ -49,13 +47,8 @@
 
                 <div class="relative mt-1">
                     <p class="max-w-screen-xl mt-4 mb-4 text-xl font-medium text-black ">
-                        Le social engineering (ou ingénierie sociale en français) est une technique de manipulation qui
-                        consiste pour un attaquant à extirper des informations à ses victimes sans qu’elles ne s’en
-                        rendent compte, grâce à des techniques de persuasion et bien souvent en usurpant l’identité d’un
-                        tiers légitime et de confiance.<br>
-                        <br>
-                        Cela peut se produire par téléphone, par courrier, en réél, mais très souvent, cela se fait par
-                        email.
+                       Social engineering is a manipulation technique consisting in extracting information from its victims without them being aware of it, thanks to persuasion techniques and often by usurping the identity of a legitimate and trusted third party. <br>
+                       This can be done by phone, by mail, in real life, but very often it is done by email.
                     </p>
                 </div>
             </div>
@@ -64,15 +57,13 @@
 
     <section class="max-w-screen-xl px-4 pt-8 mx-auto sm:px-6 lg:px-8">
         <div class="max-w-screen-xl mx-auto">
-            <p class="text-xl py-4 font-black text-[#7923E4]">POURQUOI BILLUN</p>
+            <p class="text-xl py-4 font-black text-[#7923E4]">WHY CHOOSE BILLUN?</p>
             <h1 class="pb-4 text-4xl font-extrabold text-left text-black">
-                Sécurisez vos données <span class="text-[#7923E4]">personnelles</span> et <span
-                    class="text-[#7923E4]">d'entreprise</span>
+               Secure your <span class="text-[#7923E4]">personal</span> and <span
+                    class="text-[#7923E4]">buisness data</span>
             </h1>
             <p class="max-w-screen-xl pb-4 mt-4 mb-4 text-xl font-medium text-black">
-                Fichiers piégés, usurpation d’identité, liens frauduleux ... Les cyber attaquants savent bien avec
-                quelle facilité vous cliquez sur les liens, alors <span class="text-[#7923E4]">BILLUN</span> les vérifie
-                pour vous !
+                Encrypted files, identity theft, fraudulent links ... Cyber attackers know just how easy it is to click on links, so <span class="text-[#7923E4]">BILLUN</span> checks them for you!
             </p>
         </div>
     </section>
@@ -84,15 +75,15 @@
                     <div
                         class="relative h-full px-8 pt-6 pb-8 overflow-hidden bg-white bg-opacity-75 shadow rounded-2xl shadow-gray-400">
                         <img class="object-cover object-center" alt="hero" src="./assets/API.png">
-                        <h1 class="py-4 text-lg font-black text-left">Sécurisez vos <span
-                                class="text-[#7923E4]">échanges</span> email et vos <span
-                                class="text-[#7923E4]">données</span></h1>
+                        <h1 class="py-4 text-lg font-black text-left">Secure your <span
+                                class="text-[#7923E4]">exchanges</span> and <span
+                                class="text-[#7923E4]">data</span></h1>
                         <p class="mb-3 leading-relaxed text-left cropped">Quelles seraient les conséquences d’une perte de confidentialité de vos échanges emails ? Que se passerait-il si des attaquants avaient accès aux données que vous partagez, aux documents d’entreprise que vous envoyez et aux documents confidentiels que vous recevez ? Avec BILLUN, assurez-vous de sécuriser les échanges emails entre vos collaborateurs et entre votre organisation et l’extérieur. BILLUN veille à la confidentialité de vos échanges emails, de vos conversations et des données que vous partagez.</p>
                         <div x-data="{ modelOpen: false }">
 
                             <button @click="modelOpen =!modelOpen" id=""
                                 class="text-[#EE007E] hover:text-[#6002E9] font-bold text-left">
-                                En savoir plus >
+                                Fin out more >
                             </button>
                 
                             <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title"
@@ -135,14 +126,14 @@
                     <div
                         class="relative h-full px-8 pt-6 pb-8 overflow-hidden bg-white bg-opacity-75 shadow rounded-2xl shadow-gray-400">
                         <img class="object-cover object-center" alt="hero" src="./assets/Phishing.png">
-                        <h1 class="pt-3 pb-4 text-lg font-black text-left">Prémunissez-vous des risques <span
-                                class="text-[#7923E4]">d’usurpation d’identité</span></h1>
+                        <h1 class="pt-3 pb-4 text-lg font-black text-left">Protect yourself from <span
+                                class="text-[#7923E4]">identity theft</span></h1>
                         <p class="mb-3 leading-relaxed text-left cropped"> Un fondateur dirigeant appelle le responsable financier de son organisation pour lui demander le virement d’une grosse somme d’argent afin de finaliser une transaction. Le virement est effectué dans la panique et finalement, lorsque la tension retombe, on s’apperçoit que tout cela n’était qu’une arnaque et que des millions se sont envolés. BILLUN vérifie pour vous l’identité des expéditeurs vous envoyant des emails et vous averti lorsque l’identité supposée de l’émeteur n’est pas correcte. Assurez-vous ainsi d’avoir à faire aux bons interlocuteurs et prémunissez-vous des risques d’usurpation d’identité dans votre organisation.</p>
                             <div x-data="{ modelOpen: false }">
 
                                 <button @click="modelOpen =!modelOpen" id=""
                                     class="text-[#EE007E] hover:text-[#6002E9] font-bold text-left">
-                                    En savoir plus >
+                                    Fin out more >
                                 </button>
                     
                                 <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title"
@@ -186,14 +177,14 @@
                     <div
                         class="relative h-full px-8 pt-6 pb-8 overflow-hidden bg-white bg-opacity-75 shadow rounded-2xl shadow-gray-400">
                         <img class="object-cover object-center" alt="hero" src="./assets/aide.png">
-                        <h1 class="py-4 text-lg font-black text-left">Assurez-vous de ne pas cliquer sur un <span
-                                class="text-[#7923E4]">lien malveillant</span></h1>
+                        <h1 class="py-4 text-lg font-black text-left">Make sur not to click on <span
+                                class="text-[#7923E4]">malicious links</span></h1>
                         <p class="mb-3 leading-relaxed text-left cropped"> Le principal risque en cybersécurité, c’est là où vous cliquez. BILLUN vous avertie lorsqu’un lien contenu dans un email est suspect, dangereux ou frauduleux. Un code couleur simple pour vous permettre de détecter, en un clin d’oeil, si votre navigation est sécurisée. Ainsi, vous vous assurez de ne naviguer que sur des sites officiels et de confiance, tout en veillant à la confidentialité et à la sécurité de vos données.</p>
                             <div x-data="{ modelOpen: false }">
 
                                 <button @click="modelOpen =!modelOpen" id=""
                                     class="text-[#EE007E] hover:text-[#6002E9] font-bold text-left">
-                                    En savoir plus >
+                                    Fin out more >
                                 </button>
                     
                                 <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title"
@@ -250,31 +241,31 @@
                     <div class="flex my-4">
                         <img class="w-8 h-8 mr-4" src="./assets/checkr.png" alt="">
                     </div>
-                    <span class="mt-5 ml-3 font-medium text-left">API facile à intégrer sur tous les services de messagerie</span>
+                    <span class="mt-5 ml-3 font-medium text-left">Easy-to-integrate API on all email services</span>
                 </li>
                 <li class="flex">
                     <div class="my-4 ">
                         <img class="w-8 h-8 mr-4" src="./assets/checkr.png" alt="">
                     </div>
-                    <span class="mt-5 ml-3 font-medium text-left">Améliore la vigilance de vos collaborateurs </span>
+                    <span class="mt-5 ml-3 font-medium text-left">Increases the alertness of your employees </span>
                 </li>
                 <li class="flex">
                     <div class="my-4 ">
                         <img class="w-8 h-8 mr-4" src="./assets/checkr.png" alt="">
                     </div>
-                    <span class="mt-5 ml-3 font-medium text-left">Surveillance des connexion aux comptes</span>
+                    <span class="mt-5 ml-3 font-medium text-left">Monitoring of account connections</span>
                 </li>
                 <li class="flex">
                     <div class="my-4 ">
                         <img class="w-8 h-8 mr-4" src="./assets/checkr.png" alt="">
                     </div>
-                    <span class="mt-5 ml-3 font-medium text-left">Prémunissez-vous des principales attaques de phishing</span>
+                    <span class="mt-5 ml-3 font-medium text-left">Protect yourself from the main phishing attacks</span>
                 </li>
                 <li class="flex">
                     <div class="my-4 ">
                         <img class="w-8 h-8 mr-4" src="./assets/checkr.png" alt="">
                     </div>
-                    <span class="mt-5 ml-3 font-medium text-left">Sécurisez vos communications avec vos clients & prestataires</span>
+                    <span class="mt-5 ml-3 font-medium text-left">Protect your communications with your customers & providers</span>
                 </li>
             </ul>
         </div>
@@ -288,12 +279,12 @@
 
 <section class="flex flex-col items-center justify-center w-full mx-auto mt-12 text-white border-t mypurple h-72">
     <div class="flex flex-col items-center justify-center ">
-        <hi class="pb-8 mx-auto text-4xl font-extrabold myshadowDark">Contactez-Nous !</hi>
+        <hi class="pb-8 mx-auto text-4xl font-extrabold myshadowDark">Get in touch !</hi>
         <div x-data="{ modelOpen: false }">
 
             <button @click="modelOpen =!modelOpen" id=""
                 class="px-12 py-3 mx-4 border border-gray-400 rounded-full hover:bg-gray-400 hover:bg-opacity-50">
-                Contactez Nous Maintenant >
+                Contact Us today >
             </button>
 
             <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title"
@@ -377,5 +368,5 @@
     </div>
 </section>
 
+  @include('parts.footer_en')
 
-  @include('parts.footer')

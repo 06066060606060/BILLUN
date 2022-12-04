@@ -19,8 +19,12 @@ use function PHPUnit\Framework\returnSelf;
 */
 
 Route::get('/', [GlobalController::class, 'index']);
+Route::get('en', [GlobalController::class, 'indexen']);
 Route::get('secure_mail', function () {
     return view('secure_mail');
+});
+Route::get('secure_mail_en', function () {
+    return view('secure_mail_en');
 });
 
 // mes routes avec middleware throttle______________________
