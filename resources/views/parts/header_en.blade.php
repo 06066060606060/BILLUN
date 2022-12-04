@@ -30,7 +30,7 @@
             <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
                 class="absolute inset-x-0 z-20 w-full px-6 py-4 mt-2 transition-all duration-300 ease-in-out bg-black shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0">
                 <div class="-mx-4 lg:flex lg:items-center">
-                    <a href="/" class=" block mx-4 py-2 font-black text-[color:var(--bg-color)] ">Web Security</a>
+                    <a href="/en" class=" block mx-4 py-2 font-black text-[color:var(--bg-color)] ">Web Security</a>
                     <a href="secure_mail_en"
                         class=" block mx-4 py-2 mt-4 font-black  lg:mt-0 text-gray-600  hover:text-[#6002E9] ">Email Security</a>
                         <select title="lang" name="lang"
