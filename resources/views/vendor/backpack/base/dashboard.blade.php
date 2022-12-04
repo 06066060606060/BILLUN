@@ -120,7 +120,7 @@
 
     <section class="flex flex-col pt-8 md:pt-1 md:flex-row">
 
-        <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-64 md:mr-4 mb-8 shadow-md shadow-black">
+        <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-72 md:mr-4 mb-8 shadow-md shadow-black">
             <div class="flex flex-col w-full mx-1 overflow-hidden">
                 <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Statistiques
                 </h1>
@@ -154,9 +154,9 @@
 
         </div>
         @if (backpack_user()->role == 'admin')
-            <div class="flex flex-col md:w-1/2 bg-[#111827] rounded-xl h-64 md:ml-4 shadow-md shadow-black">
+            <div class="flex flex-col md:w-1/2 bg-[#111827] rounded-xl h-72 md:ml-4 shadow-md shadow-black">
             
-                <div id="chartContainer" class=" flex w-[80%] h-64 mx-auto my-2 z-0">
+                <div id="chartContainer" class=" flex w-[80%] h-72 mx-auto my-2 z-0">
 
             </div>
         @endif
