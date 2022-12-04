@@ -1,12 +1,12 @@
 <section class="container p-6 mx-auto">
 @if (session('Message_envoye'))
     <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000, PopupUser())" class="absolute flex flex-col items-center top-[20%] left-[45%] z-50 transition">
-        <div id="popmenu" class="px-4 py-2 text-lg btnmenu text-white mx-auto bg-blue-700 rounded-lg">&zwnj; Message envoyé</div>
+        <div id="popmenu" class="px-4 py-2 mx-auto text-lg text-white bg-blue-700 rounded-lg btnmenu">&zwnj; Message envoyé</div>
     </div>
 @endif
 @if (session('Inscription'))
     <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000, PopupUser())" class="absolute flex flex-col items-center top-[20%] left-[45%] z-50 transition">
-        <div id="popmenu" class="px-4 py-2 text-lg btnmenu text-white mx-auto bg-blue-700 rounded-lg">&zwnj; Inscription en attente de validation</div>
+        <div id="popmenu" class="px-4 py-2 mx-auto text-lg text-white bg-blue-700 rounded-lg btnmenu">&zwnj; Inscription en attente de validation</div>
     </div>
 @endif
 
@@ -49,7 +49,7 @@
                         </a>
                     </div>
                     <div class="flex pt-4 md:py-8">
-                        <a href="#download" class="ml-3 my-2 text-lg font-bold underline text-[#2F42EB]">Download BILLUN for another browser</a>
+                        <a href="#download" target="_blank" class="ml-3 my-2 text-lg font-bold underline text-[#2F42EB]">Download BILLUN for another browser</a>
                     </div>
                 </div>
                 <div class="">
@@ -214,7 +214,7 @@ Most of the data breaches and cyber attacks are caused by the human factor and t
                     <form action="contact" class="z-10 p-4 pt-4 mt-2 text-lg md:p-8" method="POST" >
                     @csrf
                         <div class="flex">
-                            <input type="text" name="nom" placeholder="Nom" 
+                            <input type="text" name="nom" placeholder="Name" 
                                 class="block w-[40%] px-5 py-2 mt-2 mr-8 text-gray-700 placeholder-gray-400 bg-gray-200  rounded-xl  focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" required />
                             <input type="text" name="prenom" placeholder="Last Name"
                                 class="block w-[40%] px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-gray-200  rounded-xl  focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" />
