@@ -15,7 +15,7 @@
         <div class="container px-5 mx-auto py-18">
             <div class="flex flex-wrap w-full mx-auto mt-48 lg:flex-nowrap md:justify-center">
                 <div class="w-full mb-6 lg:w-1/2 lg:pr-16 lg:py-6 lg:mb-0 ">
-                    <h1 class="z-50 mb-4 text-3xl font-bold leading-tight text-gray-900 md:text-5xl title-font">NBROWSE THE WEB
+                    <h1 class="z-50 mb-4 text-3xl font-bold leading-tight text-gray-900 md:text-5xl title-font">BROWSE THE WEB
                         <span style="color: #2F42EB">SAFELY</span>
                     </h1>
                     <ul role="list" class="pt-6 mt-4 text-lg font-medium md:text-xl align-center">

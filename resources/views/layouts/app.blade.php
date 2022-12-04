@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="Fr">
 
 <head>
     @include('parts.head')
