@@ -2,6 +2,7 @@
 @php  $users = GlobalController::getUsers();@endphp
 @php  $emails = GlobalController::getEmails();@endphp
 @php  $sites = GlobalController::getSites();@endphp
+@php  $settings = GlobalController::settings();@endphp
 
 @extends(backpack_view('blank'))
 @section('content')
@@ -128,6 +129,9 @@
                 </div>
                 <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
                     Nombre d'adresse email enregistrés : {{ $emails->count() }}
+                </div>
+                 <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
+                    Nombre de téléchargements: {{ $settings }}
                 </div>
                 @if (backpack_user()->role == 'admin')
                     <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">

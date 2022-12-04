@@ -1,21 +1,26 @@
 <section class="container p-6 mx-auto">
-@if (session('Message_envoye'))
-    <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000, PopupUser())" class="absolute flex flex-col items-center top-[20%] left-[45%] z-50 transition">
-        <div id="popmenu" class="px-4 py-2 mx-auto text-lg text-white bg-blue-700 rounded-lg btnmenu">&zwnj; Message envoyé</div>
-    </div>
-@endif
-@if (session('Inscription'))
-    <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000, PopupUser())" class="absolute flex flex-col items-center top-[20%] left-[45%] z-50 transition">
-        <div id="popmenu" class="px-4 py-2 mx-auto text-lg text-white bg-blue-700 rounded-lg btnmenu">&zwnj; Inscription en attente de validation</div>
-    </div>
-@endif
+    @if (session('Message_envoye'))
+        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000, PopupUser())"
+            class="absolute flex flex-col items-center top-[20%] left-[45%] z-50 transition">
+            <div id="popmenu" class="px-4 py-2 mx-auto text-lg text-white bg-blue-700 rounded-lg btnmenu">&zwnj; Message
+                envoyé</div>
+        </div>
+    @endif
+    @if (session('Inscription'))
+        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000, PopupUser())"
+            class="absolute flex flex-col items-center top-[20%] left-[45%] z-50 transition">
+            <div id="popmenu" class="px-4 py-2 mx-auto text-lg text-white bg-blue-700 rounded-lg btnmenu">&zwnj;
+                Inscription en attente de validation</div>
+        </div>
+    @endif
 
     <div class="overflow-hidden body-font">
-	<div class="z-0 one"></div>
+        <div class="z-0 one"></div>
         <div class="container px-5 mx-auto py-18">
             <div class="flex flex-wrap w-full mx-auto mt-48 lg:flex-nowrap md:justify-center">
                 <div class="w-full mb-6 lg:w-1/2 lg:pr-16 lg:py-6 lg:mb-0 ">
-                    <h1 class="z-50 mb-4 text-3xl font-bold leading-tight text-gray-900 md:text-5xl title-font">NAVIGUEZ SUR
+                    <h1 class="z-50 mb-4 text-3xl font-bold leading-tight text-gray-900 md:text-5xl title-font">NAVIGUEZ
+                        SUR
                         INTERNET
                         <span style="color: #2F42EB">EN TOUTE SÉCURITÉ</span>
                     </h1>
@@ -46,15 +51,15 @@
 
                     <div class="flex">
                         <a href="https://chrome.google.com/webstore/detail/billun/ecodhgndejkcckkabdnigikdcdhchfgc"
-                            class="flex mt-8">
-                            <button
+                            target="_blank" class="flex mt-8">
+                            <button id="butdown"
                                 class="flex px-6 py-4 ml-2 mr-auto font-bold text-white border-0 rounded-full shadow-xl mycolor focus:outline-none hover:bg-indigo-600"><span
-                                    class="pt-2 text-xs md:pt-1 md:text-base">OBTENEZ BILLUN POUR CHROME</span> <img class="w-8 h-8 ml-2"
-                                    src="./assets/chrome0.png" alt=""></button>
+                                    class="pt-2 text-xs md:pt-1 md:text-base">OBTENEZ BILLUN POUR CHROME</span> <img
+                                    class="w-8 h-8 ml-2" src="./assets/chrome0.png" alt=""></button>
                         </a>
                     </div>
                     <div class="flex pt-4 md:py-8">
-                        <a href="#download" target="_blank" class="ml-3 my-2 text-lg font-bold underline text-[#2F42EB]">Télécharger
+                        <a href="#download" class="ml-3 my-2 text-lg font-bold underline text-[#2F42EB]">Télécharger
                             BILLUN pour
                             un autre navigateur</a>
                     </div>
@@ -141,7 +146,7 @@
             Navigation sécurisée avec <span class="text-[#2F42EB]">BILLUN</span> !
         </h1>
         <div class="flex flex-wrap w-full mx-auto mt-16 lg:flex-nowrap md:mt-16 md:justify-center">
-        	<div class="shape-blob"></div>
+            <div class="shape-blob"></div>
             <div class="">
                 <img id="logo"
                     class="absolute object-cover object-center select-none md:w-[290px] md:h-[290px] w-48 h-48 ml-16 mt-16 md:ml-32 md:mt-24 lg:mt-36"
@@ -225,7 +230,8 @@
                 <div class="w-full mx-auto md:w-1/2">
                     <h1 class="pt-16 text-3xl font-bold lg:text-2xl lg:pl-16">Si vous souhaitez faire <span
                             class="text-[#2F42EB]">certifier votre site web</span> ou <br> contester l'ajout de votre
-                        site sur liste rouge,<span class="text-[#2F42EB]">veuillez <br>remplir</span> le formulaire</h1>
+                        site sur liste rouge,<span class="text-[#2F42EB]">veuillez <br>remplir</span> le formulaire
+                    </h1>
                     <img class="object-cover object-center mx-auto billy" alt="hero" src="./assets/billy.gif">
 
                 </div>
@@ -235,11 +241,12 @@
                     class="z-10 w-full md:w-3/4 px-2 py-8 mx-auto overflow-hidden bg-white rounded-[50px] shadow-lg shadow-gray-400  lg:max-w-lg mt-8 min-w-[310px] pr-4">
                     <h1 class="text-xl font-extrabold text-[#2F42EB] ml-4">Formulaire *</h1>
 
-                    <form action="contact" class="z-10 p-4 pt-4 mt-2 text-lg md:p-8" method="POST" >
-                    @csrf
+                    <form action="contact" class="z-10 p-4 pt-4 mt-2 text-lg md:p-8" method="POST">
+                        @csrf
                         <div class="flex">
-                            <input type="text" name="nom" placeholder="Nom" 
-                                class="block w-[40%] px-5 py-2 mt-2 mr-8 text-gray-700 placeholder-gray-400 bg-gray-200  rounded-xl  focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" required />
+                            <input type="text" name="nom" placeholder="Nom"
+                                class="block w-[40%] px-5 py-2 mt-2 mr-8 text-gray-700 placeholder-gray-400 bg-gray-200  rounded-xl  focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40"
+                                required />
                             <input type="text" name="prenom" placeholder="Prénom"
                                 class="block w-[40%] px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-gray-200  rounded-xl  focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40" />
                         </div>
@@ -264,13 +271,15 @@
                         </div>
                         <div class="w-full pt-2 mt-2">
                             <div class="flex">
-                                <input type="checkbox" name="operation" value="0" class="mb-20 mr-4" id="checkme"  required>
+                                <input type="checkbox" name="operation" value="0" class="mb-20 mr-4"
+                                    id="checkme" required>
                                 <p class="text-xs leading-relaxed text-left">
                                     J'accepte que <span class="text-[#2F42EB] font-semibold">Billun</span> traite mes
                                     données afin de répondre à ma demande.*<br>
                                     <br>
                                     Pour plus d’informations, nous vous invitons à lire la <span
-                                        class="text-[#2F42EB] font-semibold" onclick="document.getElementById('primaryButton').click()">Politique de
+                                        class="text-[#2F42EB] font-semibold"
+                                        onclick="document.getElementById('primaryButton').click()">Politique de
                                         Confidentialité</span>, ou à envoyer un mail de demande d’information.
                                 </p>
                             </div>
@@ -284,13 +293,13 @@
 
                     </form>
                 </div>
-  
+
             </div>
         </div>
 
     </div>
 </section>
-  @include('parts.footer')
+@include('parts.footer')
 <style>
     .billy {
         -webkit-transform: scaleX(-1);
@@ -305,4 +314,15 @@
         updateElement.classList.toggle("active");
 
     }
+
+    $('#butdown').on('click', function() {
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            csrf: $('meta[name="csrf-token"]').attr('content'),
+            url: 'http://127.0.0.1:8000/download',
+            method: 'POST',
+        });
+    });
 </script>

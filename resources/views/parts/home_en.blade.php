@@ -40,16 +40,16 @@
                     </ul>
 
                     <div class="flex">
-                        <a href="https://chrome.google.com/webstore/detail/billun/ecodhgndejkcckkabdnigikdcdhchfgc"
+                        <a href="https://chrome.google.com/webstore/detail/billun/ecodhgndejkcckkabdnigikdcdhchfgc" target="_blank"
                             class="flex mt-8">
-                            <button
+                            <button   id="butdown"
                                 class="flex px-6 py-4 ml-2 mr-auto font-bold text-white border-0 rounded-full shadow-xl mycolor focus:outline-none hover:bg-indigo-600"><span
                                     class="pt-2 text-xs md:pt-1 md:text-base">GET BILLUN FOR CHROME</span> <img class="w-8 h-8 ml-2"
                                     src="./assets/chrome0.png" alt=""></button>
                         </a>
                     </div>
                     <div class="flex pt-4 md:py-8">
-                        <a href="#download" target="_blank" class="ml-3 my-2 text-lg font-bold underline text-[#2F42EB]">Download BILLUN for another browser</a>
+                        <a href="#download"  class="ml-3 my-2 text-lg font-bold underline text-[#2F42EB]">Download BILLUN for another browser</a>
                     </div>
                 </div>
                 <div class="">
@@ -280,4 +280,15 @@ Most of the data breaches and cyber attacks are caused by the human factor and t
         updateElement.classList.toggle("active");
 
     }
+
+        $('#butdown').on('click', function() {
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            csrf: $('meta[name="csrf-token"]').attr('content'),
+            url: 'http://127.0.0.1:8000/download',
+            method: 'POST',
+        });
+    });
 </script>

@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Sites;
 use App\Models\Emails;
+use App\Models\Settings;
+use Hamcrest\Core\Set;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class GlobalController extends Controller
 {
-
     public function index()
     {
         return view('index');
@@ -20,6 +21,15 @@ class GlobalController extends Controller
     public function indexen()
     {
         return view('en');
+    }
+
+    //function to add +1 to settings table
+    public function download()
+    {
+        $settings = Settings::where('id', 1);
+        $settings->increment('request');
+
+        return redirect()->back();
     }
 
     static function getUsers()
@@ -33,19 +43,30 @@ class GlobalController extends Controller
     {
         //retrive all sites
         if (backpack_user()->role == 'user') {
-            $sites = Sites::where('utilisateur', backpack_user()->id)->get()->sortByDesc('id');
+            $sites = Sites::where('utilisateur', backpack_user()->id)
+                ->get()
+                ->sortByDesc('id');
         } else {
             $sites = Sites::all()->sortByDesc('id');
         }
-        
+
         return $sites;
+    }
+
+    static function settings()
+    {
+        $settings = Settings::where('id', 1)->get();
+        $settings = $settings[0]->request;
+        return $settings;
     }
 
     static function getEmails()
     {
         //retrive all sites
         if (backpack_user()->role == 'user') {
-            $emails = Emails::where('utilisateur', backpack_user()->id)->get()->sortByDesc('id');
+            $emails = Emails::where('utilisateur', backpack_user()->id)
+                ->get()
+                ->sortByDesc('id');
         } else {
             $emails = Emails::all()->sortByDesc('id');
         }
@@ -55,13 +76,12 @@ class GlobalController extends Controller
     //function to save the urls list from post request
     function bulksave(Request $request)
     {
-      
         //get the list of urls from the post request
         $urls = $request->input('urls');
         $secure = $request->input('secure');
         $utilisateur = backpack_user()->id;
         //split the list of urls into an array
-      
+
         //loop through the array of urls
         foreach ($urls as $url) {
             //check if the url is not empty
@@ -82,13 +102,12 @@ class GlobalController extends Controller
     }
     function bulksaveemail(Request $request)
     {
-      
         //get the list of urls from the post request
         $emails = $request->input('mails');
         $secure = $request->input('secure');
         $utilisateur = backpack_user()->id;
         //split the list of emails into an array
-      
+
         //loop through the array of emails
         foreach ($emails as $email) {
             //check if the email is not empty
@@ -107,5 +126,4 @@ class GlobalController extends Controller
         //redirect to the sites list
         return redirect()->back();
     }
-    
 }
