@@ -39,8 +39,6 @@
                         id="lang">
                         <option class="text-center" id="optionx" value="/" selected>Fr</option>
                         <option class="text-center" id="optionx" value="en">En</option>
-                        <option class="text-center" id="optionx" value="Es">Es</option>
-                        <option class="text-center" id="optionx" value="It">It</option>
                     </select>
                 </div>
             </div>

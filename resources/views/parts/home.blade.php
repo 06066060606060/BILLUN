@@ -1,12 +1,12 @@
 <section class="container p-6 mx-auto">
 @if (session('Message_envoye'))
     <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000, PopupUser())" class="absolute flex flex-col items-center top-[20%] left-[45%] z-50 transition">
-        <div id="popmenu" class="px-4 py-2 text-lg btnmenu text-white mx-auto bg-blue-700 rounded-lg">&zwnj; Message envoyé</div>
+        <div id="popmenu" class="px-4 py-2 mx-auto text-lg text-white bg-blue-700 rounded-lg btnmenu">&zwnj; Message envoyé</div>
     </div>
 @endif
 @if (session('Inscription'))
     <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000, PopupUser())" class="absolute flex flex-col items-center top-[20%] left-[45%] z-50 transition">
-        <div id="popmenu" class="px-4 py-2 text-lg btnmenu text-white mx-auto bg-blue-700 rounded-lg">&zwnj; Inscription en attente de validation</div>
+        <div id="popmenu" class="px-4 py-2 mx-auto text-lg text-white bg-blue-700 rounded-lg btnmenu">&zwnj; Inscription en attente de validation</div>
     </div>
 @endif
 
@@ -54,7 +54,7 @@
                         </a>
                     </div>
                     <div class="flex pt-4 md:py-8">
-                        <a href="#download" class="ml-3 my-2 text-lg font-bold underline text-[#2F42EB]">Télécharger
+                        <a href="#download" target="_blank" class="ml-3 my-2 text-lg font-bold underline text-[#2F42EB]">Télécharger
                             BILLUN pour
                             un autre navigateur</a>
                     </div>

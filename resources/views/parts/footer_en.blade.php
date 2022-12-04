@@ -1,7 +1,7 @@
 <footer aria-label="Site Footer" class="bg-white">
   <div class="container px-24 py-4 pb-6 mx-auto sm:px-6 lg:pr-24 lg:pl-32">
     <div class="pt-6 border-t border-gray-100 sm:flex sm:items-center sm:justify-between">
-      <a href="admin"><img class="mx-auto md:mx-0" src="./assets/logofoot.png"></a>
+      <a href="admin" target="_blank"><img class="mx-auto md:mx-0" src="./assets/logofoot.png"></a>
       <ul class="flex items-center justify-center gap-6 mt-4 sm:mt-0 sm:justify-start">
         <li>
           <div x-data="{ modelOpen: false }">
