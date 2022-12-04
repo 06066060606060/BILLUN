@@ -17,7 +17,7 @@
                             <i class="absolute py-3 pl-2 las la-envelope text-[#7C69EF] la-2x"></i>
                             <div>
                                 <input type="text"
-                                    class="form-control{{ $errors->has($username) ? ' is-invalid' : '' }} w-full bg-white border border-transparent focus:border-[#6002E9] focus:ring-2 pl-12  placeholder:text-gray-900 placeholder:font-bold focus:ring-blue-200 text-base outline-none text-gray-700 py-3 px-3 leading-8 transition-colors duration-200 rounded-xl ease-in-out"
+                                    class="form-control{{ $errors->has($username) ? ' is-invalid' : '' }} w-full bg-blue-100 border border-transparent focus:border-[#6002E9] focus:ring-2 pl-12  placeholder:text-gray-900 placeholder:font-bold focus:ring-blue-200 text-base outline-none text-gray-700 py-3 px-3 leading-8 transition-colors duration-200 rounded-xl ease-in-out"
                                     name="{{ $username }}" value="{{ old($username) }}" id="{{ $username }}">
 
                                 @if ($errors->has($username))
@@ -32,7 +32,7 @@
                             <i class="absolute py-3 pl-2 las la-lock text-[#7C69EF] la-2x"></i>
                             <div>
                                 <input type="password"
-                                    class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} w-full bg-white border border-transparent focus:border-[#6002E9] focus:ring-2 pl-12 placeholder:text-gray-900 placeholder:font-bold focus:ring-blue-200 text-base outline-none text-gray-700 py-3 px-3 leading-8 transition-colors duration-200 rounded-xl ease-in-out"
+                                    class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} w-full bg-blue-100 border border-transparent focus:border-[#6002E9] focus:ring-2 pl-12 placeholder:text-gray-900 placeholder:font-bold focus:ring-blue-200 text-base outline-none text-gray-700 py-3 px-3 leading-8 transition-colors duration-200 rounded-xl ease-in-out"
                                     name="password" id="password">
 
                                 @if ($errors->has('password'))
