@@ -181,11 +181,11 @@ Most of the data breaches and cyber attacks are caused by the human factor and t
     <div class="flex flex-col items-center justify-center w-3/4 pt-12 pb-12 mx-auto">
         <div
             class="flex flex-wrap items-baseline justify-center max-w-5xl space-x-4 space-y-8 md:space-x-6 xl:space-x-8">
-            <img class="w-32 h-auto" src="./assets/chrome.png" alt="">
-            <img class="w-32 h-auto" src="./assets/opera.png" alt="">
-            <img class="w-32 h-auto" src="./assets/edge.png" alt="">
-            <img class="w-32 h-auto" src="./assets/firefox.png" alt="">
-            <img class="w-32 h-auto" src="./assets/brave.png" alt="">
+            <img class="w-32 h-auto" src="./img/chrome.png" alt="">
+            <img class="w-32 h-auto" src="./img/opera.png" alt="">
+            <img class="w-32 h-auto" src="./img/edge.png" alt="">
+            <img class="w-32 h-auto" src="./img/firefox.png" alt="">
+            <img class="w-32 h-auto" src="./img/brave.png" alt="">
         </div>
     </div>
 </section>
