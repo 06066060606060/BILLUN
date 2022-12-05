@@ -1,6 +1,8 @@
 @php use \App\Http\Controllers\GlobalController; @endphp
 @php  $users = GlobalController::getUsers();@endphp
 @php  $emails = GlobalController::getEmails();@endphp
+@php  $emailsecure = GlobalController::getEmailsecure();@endphp
+@php  $emailinsecure = GlobalController::getEmailinsecure();@endphp
 @php  $sites = GlobalController::getSites();@endphp
 @php  $sitesecure = GlobalController::getSitesecure();@endphp
 @php  $sitesinsecure = GlobalController::getSitesinsecure();@endphp
@@ -14,7 +16,7 @@
 
         <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-96 md:mr-4 mb-8 shadow-md shadow-black">
             <div class="flex flex-col w-full mx-1 overflow-auto">
-                <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Derniers Sites Ajoutés
+                <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Derniers Sites Signalés par l'Api
                 </h1>
                 <table class="divide-y">
                     <thead class="">
@@ -246,9 +248,9 @@
 
             
             var chart2 = new Chartist.Pie('.ct-chart2', {
-                series: [70, 30],
+                series: [{{ $emailsecure->count() }}, {{ $emailinsecure->count() }}],
 
-                labels: [70, 30]
+                labels: [{{ $emailsecure->count() }}, {{ $emailinsecure->count() }}]
             }, {
                 donut: true,
                 donutWidth: 30,
@@ -294,12 +296,6 @@
                 }
             });
 
-
-
-
-
-
-
             var chromeExtensionWebstoreURL =
                 'https://chrome.google.com/webstore/detail/billun/ecodhgndejkcckkabdnigikdcdhchfgc';
 
@@ -313,8 +309,6 @@
                     document.getElementById("totaldown").innerHTML = "Nombre de téléchargement WebStore: " +
                         numUsers;
                 });
-
-
         };
     </script>
     <style>

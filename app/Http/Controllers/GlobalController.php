@@ -36,7 +36,7 @@ class GlobalController extends Controller
     static function getUsers()
     {
         //retrive all users
-        $users = User::all();
+        $users = User::where('id', '<', 99)->get();
         return $users;
     }
 
@@ -48,7 +48,7 @@ class GlobalController extends Controller
                 ->get()
                 ->sortByDesc('id');
         } else {
-            $sites = Sites::all()->sortByDesc('id');
+            $sites = Sites::where('utilisateur', 99)->get();
         }
 
         return $sites;
@@ -70,6 +70,24 @@ class GlobalController extends Controller
         $sitesinsecure = Sites::where('secure', 0)->get();
 
         return $sitesinsecure;
+    }
+
+    static function getEmailsecure()
+    {
+        //retrive all sites
+
+        $emailsecure = Emails::where('secure', 1)->get();
+
+        return $emailsecure;
+    }
+
+    static function getEmailinsecure()
+    {
+        //retrive all sites
+
+        $emailinsecure = Emails::where('secure', 0)->get();
+
+        return $emailinsecure;
     }
 
     static function settings()

@@ -32,6 +32,16 @@ class SiteController extends Controller
         return response()->json(["statut" => $this->getSatutFromUri($uri)]);
     }
 
+    public function declareSite(Request $request)
+    {
+        $uri =$request->url;
+         $out = new \Symfony\Component\Console\Output\ConsoleOutput();   //logger in terminal
+         $out->writeln("test");
+        // return response()->json(["statut" => $this->getSatutFromUri($uri)]);
+    }
+
+
+
     public function getSatutFromUri($uri)
     {
         $sites = Sites::where('url', $uri)->get();

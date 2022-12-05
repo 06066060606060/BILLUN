@@ -17,15 +17,19 @@ use function PHPUnit\Framework\returnSelf;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// fr
 Route::get('/', [GlobalController::class, 'index']);
-Route::get('en', [GlobalController::class, 'indexen']);
 Route::get('secure_mail', function () {
     return view('secure_mail');
 });
+
+// english
+Route::get('en', [GlobalController::class, 'indexen']);
 Route::get('secure_mail_en', function () {
     return view('secure_mail_en');
 });
+
+
 
 // mes routes avec middleware throttle______________________
 Route::middleware(['throttle:global'])->group(function () {
