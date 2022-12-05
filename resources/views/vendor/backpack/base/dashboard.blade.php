@@ -5,7 +5,6 @@
 @php  $sitesecure = GlobalController::getSitesecure();@endphp
 @php  $sitesinsecure = GlobalController::getSitesinsecure();@endphp
 @php  $settings = GlobalController::settings();@endphp
-
 @extends(backpack_view('blank'))
 @section('content')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.css"
@@ -113,9 +112,11 @@
                 </div>
             </div>
         @endif
-
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
+        {{-- 
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.js"
+            integrity="sha512-jG3l4wynNj06R0w9JW1WZaCDPvhqa4yz8EAVjYzWqibarcn8JeFDyNtUytcr7Idx+laN7OQDaoDNmUAI4nB1qA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </section>
 
     <section class="flex flex-col pt-8 md:pt-1 md:flex-row">
@@ -157,66 +158,136 @@
         </div>
         @if (backpack_user()->role == 'admin')
             <div class="flex flex-col md:w-1/2 bg-[#111827] rounded-xl h-72 md:ml-4 shadow-md shadow-black">
+                    <div class="ct-chart z-0 flex mx-auto my-2 w-auto h-64">
 
-                <div id="chartContainer" class="z-0 flex mx-auto my-2 w-72 h-72">
+                    </div>
+     <div class="flex justify-center">
+                                <li class="flex flex-row mx-2 py-2">
+                                    <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                                    <div class="ml-2 text-sm text-gray-300">Sécurisé</div>
+                                </li>
+                                <li class="flex flex-row mx-2 py-2">
+                                    <div class="w-4 h-4 bg-red-600 rounded-full"></div>
+                                    <div class="ml-2 text-sm text-gray-300">Non Sécurisé</div>
+                                </li>
 
-                </div>
+                   
+                    </div>
+
+ </div>
+               
         @endif
 
     </section>
 
 
     <script>
-      
         window.onload = function() {
 
-            //chart 1 donut
-            var chart = new CanvasJS.Chart("chartContainer", {
-                    backgroundColor: "#111827",
-                    animationEnabled: true,
+            var chart = new Chartist.Pie('.ct-chart', {
+                series: [{{ $sitesecure->count() }}, {{ $sitesinsecure->count() }}],
 
-                    data: [{
-                        type: "doughnut",
-                        showInLegend: true,
-                        startAngle: 270,
-                        innerRadius: 80,
-
-                        dataPoints: [{
-                                y: {{ $sitesecure->count() }},
-                                name: "Sécurisé",
-                                color: "green",
-                            },
-                            {
-                                y: {{ $sitesinsecure->count() }},
-                                name: "Non Sécurisé",
-                                color: "red"
-                            },
-
-
-                        ]
-                    }],
-
-                }
-
-            );
-            chart.render();
-
-              var chromeExtensionWebstoreURL =
-        'https://chrome.google.com/webstore/detail/billun/ecodhgndejkcckkabdnigikdcdhchfgc';
-
-        $.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent(chromeExtensionWebstoreURL) +
-            '&callback=?',
-            function(response) {
-                var numUsers = (("" + response.contents.match(
-                    /<span class="e-f-ih" title="([\d]*?) users">([\d]*?) users<\/span>/)).split(",")[2]);
-
-                document.getElementById("totaldown").innerHTML = "Nombre de téléchargement WebStore: " + numUsers;
+                labels: [{{ $sitesecure->count() }}, {{ $sitesinsecure->count() }}]
+            }, {
+                donut: true,
+                donutWidth: 30,
+                showLabel: true,
+                chartPadding: 30,
+                labelOffset: 25,
+                labelDirection: 'explode'
             });
+
+            chart.on('draw', function(data) {
+                if (data.type === 'slice') {
+                    // Get the total path length in order to use for dash array animation
+                    var pathLength = data.element._node.getTotalLength();
+
+                    // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+                    data.element.attr({
+                        'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+                    });
+
+                    // Create animation definition while also assigning an ID to the animation for later sync usage
+                    var animationDefinition = {
+                        'stroke-dashoffset': {
+                            id: 'anim' + data.index,
+                            dur: 1000,
+                            from: -pathLength + 'px',
+                            to: '0px',
+                            easing: Chartist.Svg.Easing.easeOutQuint,
+                            // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                            fill: 'freeze'
+                        }
+                    };
+
+                    // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+                    if (data.index !== 0) {
+                        animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+                    }
+
+                    // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+                    data.element.attr({
+                        'stroke-dashoffset': -pathLength + 'px'
+                    });
+
+                    // We can't use guided mode as the animations need to rely on setting begin manually
+                    // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+                    data.element.animate(animationDefinition, false);
+                }
+            });
+
+
+
+
+
+
+
+            var chromeExtensionWebstoreURL =
+                'https://chrome.google.com/webstore/detail/billun/ecodhgndejkcckkabdnigikdcdhchfgc';
+
+            $.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent(chromeExtensionWebstoreURL) +
+                '&callback=?',
+                function(response) {
+                    var numUsers = (("" + response.contents.match(
+                        /<span class="e-f-ih" title="([\d]*?) users">([\d]*?) users<\/span>/)).split(",")[
+                        2]);
+
+                    document.getElementById("totaldown").innerHTML = "Nombre de téléchargement WebStore: " +
+                        numUsers;
+                });
 
 
         };
     </script>
     <style>
+        .ct-series-a .ct-bar,
+        .ct-series-a .ct-line,
+        .ct-series-a .ct-point,
+        .ct-series-a .ct-slice-donut {
+            stroke: green;
+        }
+
+        .ct-series-b .ct-bar,
+        .ct-series-b .ct-line,
+        .ct-series-b .ct-point,
+        .ct-series-b .ct-slice-donut {
+            stroke: red;
+        }
+
+        .ct-chart {
+            margin: auto;
+            width: 300px;
+            height: 300px;
+        }
+
+        .ct-label {
+            margin-top: 10px;
+            font-size: 14px;
+            fill: white;
+        }
+
+
+
         * {
             scrollbar-width: thin;
             scrollbar-color: #86878B #05070C;
