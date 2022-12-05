@@ -15,23 +15,79 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <section class="flex flex-col pt-1 md:flex-row">
 
-        <div class="flex md:w-1/2 bg-[#111827] rounded-xl h-96 md:mr-4 mb-8 shadow-md shadow-black">
-            <div class="flex flex-col w-full mx-1 overflow-auto">
-                <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Derniers Sites Signalés par l'Api
-                </h1>
-                <table class="divide-y">
+        <div x-data="{ tab: 'description' }" id="tab_wrapper"
+            class="flex flex-col md:w-1/2 bg-[#111827] rounded-xl h-96 md:mr-4 mb-8 shadow-md shadow-black">
+            <div class="flex justify-around  border-b border-gray-500 py-2 ">
+                <a :class="{ 'active': tab === 'description' }" @click.prevent="tab = 'description'" href="#">
+                    <h1 class="text-xs lg:text-lg font-bold text-center text-white">Derniers Sites Ajoutés</h1>
+                </a>
+               @if (backpack_user()->role == 'admin')
+                <a :class="{ 'active': tab === 'reviews'  }" @click.prevent="tab = 'reviews'" href="#">
+                    <h1 class="text-xs lg:text-lg font-bold text-center text-white">Derniers Sites Signalés par l'Api</h1>
+                </a>
+                @endif
+            </div>
+            <div class="flex flex-col w-full overflow-auto">
+                <table x-show="tab === 'description'" class="divide-y" >
                     <thead class="">
-                        <tr class="border-b border-gray-500 ">
+                        <tr class="border-b border-gray-500">
                             <th scope="col"
-                                class="pb-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase ">
+                                class="py-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase ">
                                 Verifié
                             </th>
                             <th scope="col"
-                                class="pb-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                class="py-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                 Url
                             </th>
                             <th scope="col"
-                                class="hidden pb-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase lg:block">
+                                class="hidden py-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase lg:block">
+                                Editer
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="">
+
+                        @foreach ($allsites->take(6) as $allsite)
+                            <tr class="mx-2 border-b border-gray-500">
+                                <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap time-container">
+                                    @if ($allsite->secure == 1)
+                                        <span class="px-2 py-1 text-xs font-medium leading-4 text-green-800 rounded-full">
+                                            <i class="las la-check la-2x"></i>
+                                        </span>
+                                    @else
+                                        <span class="px-2 py-1 text-xs font-medium leading-4 text-red-800 rounded-full">
+                                            <i class="las la-times la-2x"></i>
+                                        </span>
+                                    @endif
+                                </td>
+                                <td
+                                    class="xl:max-w-[230px] max-w-[165px] p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container overflow-hidden">
+                                    {{ $allsite->url }}
+                                </td>
+                                <td class="p-4 text-sm font-normal text-gray-300 whitespace-nowrap rate-container">
+                                    <a href="/admin/sites/{{ $allsite->id }}/edit">
+                                        <i class="las la-edit la-2x"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+                        @endforeach
+
+                    </tbody>
+                </table>
+                <table x-show="tab === 'reviews'" class="divide-y">
+                    <thead class="">
+                        <tr class="border-b border-gray-500">
+                            <th scope="col"
+                                class="py-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase ">
+                                Verifié
+                            </th>
+                            <th scope="col"
+                                class="py-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                Url
+                            </th>
+                            <th scope="col"
+                                class="hidden py-1 pl-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase lg:block">
                                 Editer
                             </th>
                         </tr>
@@ -66,6 +122,7 @@
 
                     </tbody>
                 </table>
+
             </div>
 
         </div>
@@ -161,7 +218,7 @@
         </div>
         @if (backpack_user()->role == 'admin')
             <div class="flex flex-col md:w-1/4 bg-[#111827] rounded-xl h-72 md:ml-4 shadow-md shadow-black mb-4">
-            <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Sites:</h1>
+                <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Sites:</h1>
                 <div class="ct-chart z-0 flex mx-auto w-auto py-1">
                 </div>
                 <div class="flex justify-center">
@@ -176,8 +233,8 @@
                 </div>
             </div>
             <div class="flex flex-col md:w-1/4 md:pt-0 bg-[#111827] rounded-xl h-72 md:ml-4 shadow-md shadow-black">
-            <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Emails:</h1>
-                 <div class="ct-chart2 z-0 flex mx-auto w-auto py-1">
+                <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Emails:</h1>
+                <div class="ct-chart2 z-0 flex mx-auto w-auto py-1">
                 </div>
                 <div class="flex justify-center">
                     <li class="flex flex-row mx-2 pb-2">
@@ -196,6 +253,15 @@
 
 
     <script>
+    $(function() {
+    $('#navigation').click(function() {
+            $('#navigation').removeClass('selected');
+            $(this).addClass('selected');
+        
+    });
+});
+
+
         window.onload = function() {
 
             var chart = new Chartist.Pie('.ct-chart', {
@@ -247,7 +313,7 @@
                 }
             });
 
-            
+
             var chart2 = new Chartist.Pie('.ct-chart2', {
                 series: [{{ $emailsecure->count() }}, {{ $emailinsecure->count() }}],
 
@@ -313,6 +379,11 @@
         };
     </script>
     <style>
+
+.selected{
+    color: blue;
+}
+
         .ct-series-a .ct-bar,
         .ct-series-a .ct-line,
         .ct-series-a .ct-point,
@@ -333,7 +404,7 @@
             height: 300px;
         }
 
-                .ct-chart2 {
+        .ct-chart2 {
             margin: auto;
             width: 300px;
             height: 300px;
