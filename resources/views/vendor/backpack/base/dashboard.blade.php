@@ -23,7 +23,7 @@
                 </a>
                @if (backpack_user()->role == 'admin')
                 <a :class="{ 'active': tab === 'reviews'  }" @click.prevent="tab = 'reviews'" href="#">
-                    <h1 class="text-xs lg:text-lg font-bold text-center text-white">Derniers Sites Signalés par l'Api</h1>
+                    <h1 class="text-xs lg:text-lg font-bold text-center text-white">Derniers Sites Signalés</h1>
                 </a>
                 @endif
             </div>
