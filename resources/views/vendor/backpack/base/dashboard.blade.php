@@ -131,7 +131,7 @@
                     Nombre d'adresse email enregistrés : {{ $emails->count() }}
                 </div>
                 <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
-                   Nombre de téléchargement local : {{ $settings }}
+                    Nombre de téléchargement local : {{ $settings }}
                 </div>
                 <div id="totaldown" class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
                 </div>
@@ -167,15 +167,7 @@
 
 
     <script>
-var chromeExtensionWebstoreURL = 'https://chrome.google.com/webstore/detail/billun/ecodhgndejkcckkabdnigikdcdhchfgc';
-
-$.getJSON('https://www.whateverorigin.org/get?url=' + encodeURIComponent(chromeExtensionWebstoreURL) + '&callback=?', function(response){
-    var numUsers = ((""+response.contents.match(/<span class="e-f-ih" title="([\d]*?) users">([\d]*?) users<\/span>/)).split(",")[2]);
-    
-    document.getElementById("totaldown").innerHTML =  "Nombre de téléchargement WebStore: " + numUsers;
-});
-
-
+      
         window.onload = function() {
 
             //chart 1 donut
@@ -208,6 +200,20 @@ $.getJSON('https://www.whateverorigin.org/get?url=' + encodeURIComponent(chromeE
 
             );
             chart.render();
+
+              var chromeExtensionWebstoreURL =
+        'https://chrome.google.com/webstore/detail/billun/ecodhgndejkcckkabdnigikdcdhchfgc';
+
+        $.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent(chromeExtensionWebstoreURL) +
+            '&callback=?',
+            function(response) {
+                var numUsers = (("" + response.contents.match(
+                    /<span class="e-f-ih" title="([\d]*?) users">([\d]*?) users<\/span>/)).split(",")[2]);
+
+                document.getElementById("totaldown").innerHTML = "Nombre de téléchargement WebStore: " + numUsers;
+            });
+
+
         };
     </script>
     <style>
