@@ -54,6 +54,12 @@ class GlobalController extends Controller
         return $sites;
     }
 
+    static function getallSites()
+    {
+            $allsites = Sites::all();
+        return $allsites;
+    }
+
     static function getSitesecure()
     {
         //retrive all sites

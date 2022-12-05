@@ -4,6 +4,7 @@
 @php  $emailsecure = GlobalController::getEmailsecure();@endphp
 @php  $emailinsecure = GlobalController::getEmailinsecure();@endphp
 @php  $sites = GlobalController::getSites();@endphp
+@php  $allsites = GlobalController::getallSites();@endphp
 @php  $sitesecure = GlobalController::getSitesecure();@endphp
 @php  $sitesinsecure = GlobalController::getSitesinsecure();@endphp
 @php  $settings = GlobalController::settings();@endphp
@@ -128,7 +129,7 @@
                 <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Statistiques
                 </h1>
                 <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
-                    Nombre de sites enregistrés : {{ $sites->count() }}
+                    Nombre de sites enregistrés : {{ $allsites->count() }}
                 </div>
                 <div class="px-4 py-2 text-sm text-gray-300 whitespace-nowrap time-container">
                     Nombre d'adresse email enregistrés : {{ $emails->count() }}
