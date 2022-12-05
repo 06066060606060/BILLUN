@@ -157,25 +157,36 @@
 
         </div>
         @if (backpack_user()->role == 'admin')
-            <div class="flex flex-col md:w-1/2 bg-[#111827] rounded-xl h-72 md:ml-4 shadow-md shadow-black">
-                    <div class="ct-chart z-0 flex mx-auto my-2 w-auto h-64">
-
-                    </div>
-     <div class="flex justify-center">
-                                <li class="flex flex-row mx-2 py-2">
-                                    <div class="w-4 h-4 bg-green-600 rounded-full"></div>
-                                    <div class="ml-2 text-sm text-gray-300">Sécurisé</div>
-                                </li>
-                                <li class="flex flex-row mx-2 py-2">
-                                    <div class="w-4 h-4 bg-red-600 rounded-full"></div>
-                                    <div class="ml-2 text-sm text-gray-300">Non Sécurisé</div>
-                                </li>
-
-                   
-                    </div>
-
- </div>
-               
+            <div class="flex flex-col md:w-1/4 bg-[#111827] rounded-xl h-72 md:ml-4 shadow-md shadow-black mb-4">
+            <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Sites:</h1>
+                <div class="ct-chart z-0 flex mx-auto w-auto py-1">
+                </div>
+                <div class="flex justify-center">
+                    <li class="flex flex-row mx-2 pb-2">
+                        <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                        <div class="ml-2 text-sm text-gray-300">Sécurisé</div>
+                    </li>
+                    <li class="flex flex-row mx-2 pb-2">
+                        <div class="w-4 h-4 bg-red-600 rounded-full"></div>
+                        <div class="ml-2 text-sm text-gray-300">Non Sécurisé</div>
+                    </li>
+                </div>
+            </div>
+            <div class="flex flex-col md:w-1/4 md:pt-0 bg-[#111827] rounded-xl h-72 md:ml-4 shadow-md shadow-black">
+            <h1 class="py-2 text-xl font-bold text-center text-white border-b border-gray-500">Emails:</h1>
+                 <div class="ct-chart2 z-0 flex mx-auto w-auto py-1">
+                </div>
+                <div class="flex justify-center">
+                    <li class="flex flex-row mx-2 pb-2">
+                        <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                        <div class="ml-2 text-sm text-gray-300">Sécurisé</div>
+                    </li>
+                    <li class="flex flex-row mx-2 pb-2">
+                        <div class="w-4 h-4 bg-red-600 rounded-full"></div>
+                        <div class="ml-2 text-sm text-gray-300">Non Sécurisé</div>
+                    </li>
+                </div>
+            </div>
         @endif
 
     </section>
@@ -192,9 +203,56 @@
                 donut: true,
                 donutWidth: 30,
                 showLabel: true,
-                chartPadding: 30,
-                labelOffset: 25,
-                labelDirection: 'explode'
+            });
+
+            chart.on('draw', function(data) {
+                if (data.type === 'slice') {
+                    // Get the total path length in order to use for dash array animation
+                    var pathLength = data.element._node.getTotalLength();
+
+                    // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+                    data.element.attr({
+                        'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+                    });
+
+                    // Create animation definition while also assigning an ID to the animation for later sync usage
+                    var animationDefinition = {
+                        'stroke-dashoffset': {
+                            id: 'anim' + data.index,
+                            dur: 1000,
+                            from: -pathLength + 'px',
+                            to: '0px',
+                            easing: Chartist.Svg.Easing.easeOutQuint,
+                            // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                            fill: 'freeze'
+                        }
+                    };
+
+                    // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+                    if (data.index !== 0) {
+                        animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+                    }
+
+                    // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+                    data.element.attr({
+                        'stroke-dashoffset': -pathLength + 'px'
+                    });
+
+                    // We can't use guided mode as the animations need to rely on setting begin manually
+                    // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+                    data.element.animate(animationDefinition, false);
+                }
+            });
+
+            
+            var chart2 = new Chartist.Pie('.ct-chart2', {
+                series: [70, 30],
+
+                labels: [70, 30]
+            }, {
+                donut: true,
+                donutWidth: 30,
+                showLabel: true,
             });
 
             chart.on('draw', function(data) {
@@ -275,6 +333,12 @@
         }
 
         .ct-chart {
+            margin: auto;
+            width: 300px;
+            height: 300px;
+        }
+
+                .ct-chart2 {
             margin: auto;
             width: 300px;
             height: 300px;
