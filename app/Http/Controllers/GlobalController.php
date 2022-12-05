@@ -56,7 +56,7 @@ class GlobalController extends Controller
 
     static function getallSites()
     {
-            $allsites = Sites::all();
+            $allsites = Sites::all()->sortByDesc('id');
         return $allsites;
     }
 
