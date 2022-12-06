@@ -6,6 +6,8 @@ use App\Http\Requests\SitesRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
+use function PHPSTORM_META\type;
+
 /**
  * Class SitesCrudController
  * @package App\Http\Controllers\Admin
@@ -81,7 +83,8 @@ class SitesCrudController extends CrudController
     {
         CRUD::setValidation(SitesRequest::class);
 
-        CRUD::field('url');
+        CRUD::field('url')->type('url');
+        
         $this->crud->addField(
             [   // select_from_array
             'name'        => 'secure',

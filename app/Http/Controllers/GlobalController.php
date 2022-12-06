@@ -121,6 +121,11 @@ class GlobalController extends Controller
     {
         //get the list of urls from the post request
         $urls = $request->input('urls');
+        //remove https:// and http:// from the urls
+        $urls = str_replace('https://', '', $urls);
+        $urls = str_replace('http://', '', $urls);
+        //remove www. from the urls
+        $urls = str_replace('www.', '', $urls);
         $secure = $request->input('secure');
         $utilisateur = backpack_user()->id;
         //split the list of urls into an array
