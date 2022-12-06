@@ -89,7 +89,7 @@ class SitesCrudController extends CrudController
         ];
         $this->crud->setValidation($rules, $messages);
 
-        CRUD::field('url')->type('url')->on('saving', function ($entry) {
+        CRUD::field('url')->on('saving', function ($entry) {
             $entry->url = str_replace('http://', '', $entry->url);
             $entry->url = str_replace('https://', '', $entry->url);
             $entry->url = str_replace('www.', '', $entry->url);
