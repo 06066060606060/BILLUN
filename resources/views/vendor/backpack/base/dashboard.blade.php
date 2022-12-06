@@ -21,14 +21,14 @@
                 <a :class="{ 'active': tab === 'description' }" @click.prevent="tab = 'description'" href="#">
                     <h1 class="text-xs lg:text-lg font-bold text-center text-white">Derniers Sites Ajoutés</h1>
                 </a>
-               @if (backpack_user()->role == 'admin')
-                <a :class="{ 'active': tab === 'reviews'  }" @click.prevent="tab = 'reviews'" href="#">
-                    <h1 class="text-xs lg:text-lg font-bold text-center text-white">Derniers Sites Signalés</h1>
-                </a>
+                @if (backpack_user()->role == 'admin')
+                    <a :class="{ 'active': tab === 'reviews' }" @click.prevent="tab = 'reviews'" href="#">
+                        <h1 class="text-xs lg:text-lg font-bold text-center text-white">Derniers Sites Signalés</h1>
+                    </a>
                 @endif
             </div>
             <div class="flex flex-col w-full overflow-auto">
-                <table x-show="tab === 'description'" class="divide-y" >
+                <table x-show="tab === 'description'" class="divide-y">
                     <thead class="">
                         <tr class="border-b border-gray-500">
                             <th scope="col"
@@ -214,7 +214,6 @@
                     @endif
                 </div>
             </div>
-
         </div>
         @if (backpack_user()->role == 'admin')
             <div class="flex flex-col md:w-1/4 bg-[#111827] rounded-xl h-72 md:ml-4 shadow-md shadow-black mb-4">
@@ -250,16 +249,23 @@
         @endif
 
     </section>
+    @if (backpack_user()->role == 'admin')
+        <p class="rounded text-xs py-2  bg-gray-900 text-gray-200 w-full px-4">
+            Derniéres mise à jour: <br>
+            -filtrages des entrées http/https,<br>
+            -filtrage entrées unique.
+        </p>
+    @endif
 
 
     <script>
-    $(function() {
-    $('#navigation').click(function() {
-            $('#navigation').removeClass('selected');
-            $(this).addClass('selected');
-        
-    });
-});
+        $(function() {
+            $('#navigation').click(function() {
+                $('#navigation').removeClass('selected');
+                $(this).addClass('selected');
+
+            });
+        });
 
 
         window.onload = function() {
@@ -379,10 +385,9 @@
         };
     </script>
     <style>
-
-.selected{
-    color: blue;
-}
+        .selected {
+            color: blue;
+        }
 
         .ct-series-a .ct-bar,
         .ct-series-a .ct-line,
