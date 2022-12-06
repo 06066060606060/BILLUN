@@ -81,9 +81,20 @@ class SitesCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(SitesRequest::class);
+      
+        $rules = ['url' => 'required|min:2|max:255|unique:sites'];
+        $messages = [
+            'url.required' => 'Url obligatoire !',
+            'url.unique' => 'Cette url existe déja !',
+        ];
+        $this->crud->setValidation($rules, $messages);
 
-        CRUD::field('url')->type('url');
+        CRUD::field('url')->type('url')->on('saving', function ($entry) {
+            $entry->url = str_replace('http://', '', $entry->url);
+            $entry->url = str_replace('https://', '', $entry->url);
+            $entry->url = str_replace('www.', '', $entry->url);
+        });
+
         
         $this->crud->addField(
             [   // select_from_array

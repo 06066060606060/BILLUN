@@ -79,7 +79,12 @@ class EmailsCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(EmailsRequest::class);
+        $rules = ['adresse' => 'required|min:2|max:255|unique:adresse'];
+        $messages = [
+            'adresse.required' => 'adresse email obligatoire !',
+            'adresse.unique' => 'Cette adresse email existe déja !',
+        ];
+        $this->crud->setValidation($rules, $messages);
 
         CRUD::field('adresse');
         $this->crud->addField([
