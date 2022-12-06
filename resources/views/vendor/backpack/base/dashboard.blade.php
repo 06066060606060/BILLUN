@@ -252,7 +252,7 @@
     @if (backpack_user()->role == 'admin')
         <p class="rounded text-xs py-2  bg-gray-900 text-gray-200 w-full px-4">
             Derniéres mise à jour: <br>
-            -filtrages des entrées http/https,<br>
+            -nettoyage des entrées http/https.<br>
             -filtrage entrées unique.
         </p>
     @endif
