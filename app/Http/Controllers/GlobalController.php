@@ -137,6 +137,8 @@ class GlobalController extends Controller
         $urls = str_replace('http://', '', $urls);
         //remove www. from the urls
         $urls = str_replace('www.', '', $urls);
+        // remove all after the first /
+        $urls = preg_replace('/\/.*/', '', $urls);
         $secure = $request->input('secure');
         $utilisateur = backpack_user()->id;
         //split the list of urls into an array

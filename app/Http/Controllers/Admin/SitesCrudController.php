@@ -93,6 +93,8 @@ class SitesCrudController extends CrudController
             $entry->url = str_replace('http://', '', $entry->url);
             $entry->url = str_replace('https://', '', $entry->url);
             $entry->url = str_replace('www.', '', $entry->url);
+            //remove all after the first slash
+            $entry->url = preg_replace('/\/.*/', '', $entry->url);
         });
 
         

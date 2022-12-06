@@ -79,7 +79,7 @@ class EmailsCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        $rules = ['adresse' => 'required|min:2|max:255|unique:adresse'];
+        $rules = ['adresse' => 'required|min:2|max:255|unique:emails'];
         $messages = [
             'adresse.required' => 'adresse email obligatoire !',
             'adresse.unique' => 'Cette adresse email existe déja !',
