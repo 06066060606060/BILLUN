@@ -8,6 +8,7 @@
 @php  $sitesecure = GlobalController::getSitesecure();@endphp
 @php  $sitesinsecure = GlobalController::getSitesinsecure();@endphp
 @php  $settings = GlobalController::settings();@endphp
+@php  $version = GlobalController::version();@endphp
 @extends(backpack_view('blank'))
 @section('content')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.css"
@@ -251,10 +252,11 @@
     </section>
     @if (backpack_user()->role == 'admin')
         <p class="rounded text-xs py-2  bg-gray-900 text-gray-200 w-full px-4">
-            Derniéres mise à jour: <br>
+             Derniéres mise à jour:  {{ $version }}<br>
             -nettoyage des entrées http/https.<br>
             -filtrage entrées unique.
         </p>
+       
     @endif
 
 

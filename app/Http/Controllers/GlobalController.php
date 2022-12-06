@@ -54,9 +54,20 @@ class GlobalController extends Controller
         return $sites;
     }
 
+    static function version(){
+        $filename = '../public/build/manifest.json';
+        $ver = date ("d/m/y H:i", filemtime($filename) + 3600);
+        $version = $ver;
+        return $version;
+    }
+
+
+
+
+
     static function getallSites()
     {
-            $allsites = Sites::all()->sortByDesc('id');
+        $allsites = Sites::all()->sortByDesc('id');
         return $allsites;
     }
 
