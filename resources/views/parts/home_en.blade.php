@@ -127,7 +127,7 @@ Most of the data breaches and cyber attacks are caused by the human factor and t
                 <img id="logo"
                     class="absolute object-cover object-center select-none md:w-[290px] md:h-[290px] w-48 h-48 ml-16 mt-16 md:ml-32 md:mt-24 lg:mt-36"
                     alt="hero" src="./assets/animation.gif">
-                <img class="object-cover object-center" alt="hero" src="./assets/Google_ Main.png">
+                <img class="object-cover object-center" alt="hero" src="./assets/Google_ Main_en.png">
             </div>
             <div class="w-full lg:w-1/3 lg:py-6 lg:mb-0 ">
                 <ul role="list" class="pt-6 mt-4">
@@ -203,9 +203,7 @@ Most of the data breaches and cyber attacks are caused by the human factor and t
                     <h1 class="pt-16 text-3xl font-bold lg:text-2xl lg:pl-16">If you'd like <span
                             class="text-[#2F42EB]"> certify your website </span> or <br> contest the redlisting of your site,<span class="text-[#2F42EB]"> please fill out the form. <br></span></h1>
                     <img class="object-cover object-center mx-auto billy" alt="hero" src="./assets/billy.gif">
-
                 </div>
-
 
                 <div
                     class="z-10 w-full md:w-3/4 px-2 py-8 mx-auto overflow-hidden bg-white rounded-[50px] shadow-lg shadow-gray-400  lg:max-w-lg mt-8 min-w-[310px] pr-4">
