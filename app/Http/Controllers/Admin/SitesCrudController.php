@@ -154,6 +154,29 @@ class SitesCrudController extends CrudController
      */
     protected function setupUpdateOperation()
     {
-        $this->setupCreateOperation();
+        CRUD::field('url')->on('saving', function ($entry) {
+            $entry->url = str_replace('http://', '', $entry->url);
+            $entry->url = str_replace('https://', '', $entry->url);
+            $entry->url = str_replace('www.', '', $entry->url);
+            //remove all after the first slash
+            $entry->url = preg_replace('/\/.*/', '', $entry->url);
+        });
+
+        
+        $this->crud->addField(
+            [   // select_from_array
+            'name'        => 'secure',
+            'label'       => "Status",
+            'type'        => 'select_from_array',
+            'options'     => [
+                '1' => 'Securisé',
+                '0' => 'Non Sécurisé',
+            ],
+            'allows_null' => false,
+            'default'     => 'one',
+            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        ]);
+        $entry = backpack_user()->id;
+        CRUD::field('utilisateur')->type('hidden')->value($entry);
     }
 }

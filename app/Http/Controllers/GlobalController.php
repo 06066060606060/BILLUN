@@ -166,6 +166,11 @@ class GlobalController extends Controller
         //get the list of urls from the post request
         $emails = $request->input('mails');
         $secure = $request->input('secure');
+        $firstname = $request->input('firstname');
+        $lastname = $request->input('lastname');
+        $company = $request->input('company');
+        $phone = $request->input('phone');
+        $categorie = $request->input('categorie');
         $utilisateur = backpack_user()->id;
         //split the list of emails into an array
 
@@ -180,6 +185,11 @@ class GlobalController extends Controller
                     $site->adresse = $email;
                     $site->secure = $secure;
                     $site->utilisateur = $utilisateur;
+                    $site->firstname = $firstname;
+                    $site->lastname = $lastname;
+                    $site->company = $company;
+                    $site->phone = $phone;
+                    $site->categorie = $categorie;
                     $site->save();
                 }
             }

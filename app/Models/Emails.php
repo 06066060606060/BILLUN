@@ -16,5 +16,10 @@ class Emails extends Model
         'secure',
         'utilisateur',
         'categorie',
+        'firstname',
+        'lastname',
+        'phone',
+        'company',
+        'type',
     ];
 }

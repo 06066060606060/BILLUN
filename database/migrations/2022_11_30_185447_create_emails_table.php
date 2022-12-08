@@ -19,6 +19,11 @@ return new class extends Migration
             $table->integer('secure')->nullable();
             $table->string('utilisateur')->nullable();
             $table->string('categorie')->nullable();
+            $table->string('firstname')->nullable();
+            $table->string('lastname')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('societe')->nullable();
+            $table->string('categorie')->nullable();
             $table->timestamps();
         });
     }

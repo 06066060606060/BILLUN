@@ -61,8 +61,33 @@ class EmailsCrudController extends CrudController
             ],
         ]);
         CRUD::column('adresse');
+        CRUD::column('utilisateur');
+        CRUD::column('firstname')->label('Nom');
+        CRUD::column('lastname')->label('Prénom');
+        CRUD::column('phone')->label('Telephone');
+        CRUD::column('company');
+        $this->crud->addColumn([
+            'name'    => 'categorie',
+            'label'   => 'Categorie',
+            'type'    => 'boolean',
+            'options' => [0 => 'Aucune', 1 => 'Perso', 2 => 'Pro'], // optional
+            'wrapper' => [
+                'element' => 'span',
+                'class' => function ($crud, $column, $entry, $related_key) {
+                    if ($column['text'] == 'Aucune') {
+                        return 'badge badge-primary';
+                    } else if ($column['text'] == 'Perso') {
+                        return 'badge badge-warning';
+                    } else if ($column['text'] == 'Pro') {
+                        return 'badge badge-info';
+                    }
+        
+                    return 'badge badge-default';
+                },
+            ],
+        ]);
         // CRUD::column('categorie');
-        CRUD::column('updated_at')->label('Date');;
+        CRUD::column('updated_at')->label('Date');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -105,6 +130,21 @@ class EmailsCrudController extends CrudController
             'default'     => 'one',
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
+        $this->crud->addField(
+            [   // select_from_array
+            'name'        => 'categorie',
+            'label'       => "Categorie",
+            'type'        => 'select_from_array',
+            'options'     => [
+                '0' => 'Aucune',
+                '1' => 'Perso',
+                '2' => 'Pro',
+            ],
+            'allows_null' => false,
+            'default'     => '0',
+            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        ]);
+
         $entry = backpack_user()->id;
         CRUD::field('utilisateur')->type('hidden')->value($entry);
         // $this->crud->addField([   // select_from_array
@@ -137,6 +177,45 @@ class EmailsCrudController extends CrudController
      */
     protected function setupUpdateOperation()
     {
-        $this->setupCreateOperation();
+  
+
+        CRUD::field('adresse');
+        CRUD::field('firstname')->label('Nom');
+        CRUD::field('lastname')->label('Prénom');
+        CRUD::field('phone')->label('Telephone');
+        CRUD::field('company');
+        $this->crud->addField([
+            'name'  => 'adresse', // The db column name
+            'label' => 'adresse email', // Table column heading
+            'type'  => 'email',
+        ]);
+        $this->crud->addField(
+            [   // select_from_array
+            'name'        => 'secure',
+            'label'       => "Vérifié",
+            'type'        => 'select_from_array',
+            'options'     => [
+                '1' => 'Securisé',
+                '0' => 'Non Sécurisé',
+            ],
+            'allows_null' => false,
+            'default'     => 'one',
+            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        ]);
+        $this->crud->addField(
+            [   // select_from_array
+            'name'        => 'categorie',
+            'label'       => "Categorie",
+            'type'        => 'select_from_array',
+            'options'     => [
+                '0' => 'Aucune',
+                '1' => 'Perso',
+                '2' => 'Pro',
+            ],
+            'allows_null' => false,
+            'default'     => '0',
+            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        ]);
+
     }
 }

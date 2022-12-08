@@ -253,8 +253,7 @@
     @if (backpack_user()->role == 'admin')
         <p class="w-full px-4 py-2 text-xs text-gray-200 bg-gray-900 rounded">
              Derniéres mise à jour:  {{ $version }}<br>
-            -Ajout api signalement<br>
-            -Code signalement identification mail ou site.
+            -Ajout colones supplémentaire table emails<br>
         </p>
        
     @endif
