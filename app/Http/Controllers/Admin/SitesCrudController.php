@@ -64,6 +64,27 @@ class SitesCrudController extends CrudController
         ]);
         CRUD::column('url');
         //  CRUD::column('utilisateur');
+        $this->crud->addColumn([
+            'name'    => 'utilisateur',
+            'label'   => 'Source',
+            'type'    => 'text',
+            'options' => ['1' => 'Admin', '99' => 'Api'], // optional
+            'wrapper' => [
+                'element' => 'span',
+                'class' => function ($crud, $column, $entry, $related_key) {
+                    if ($column['text'] ==  '99') 
+                    {
+                        return 'badge badge-danger';
+                    } else if ($column['text'] == '1')
+                    {
+                        return 'badge badge-success';
+                    } else 
+                    {
+                        return 'badge badge-default';
+                    }
+                },
+            ],
+        ]);
         CRUD::column('updated_at')->label('Date');;
 
         /**

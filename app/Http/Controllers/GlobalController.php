@@ -10,6 +10,7 @@ use Hamcrest\Core\Set;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Termwind\Components\Dd;
 
 class GlobalController extends Controller
 {
@@ -26,7 +27,6 @@ class GlobalController extends Controller
     //function to add +1 to settings table
     public function download()
     {
-    
         $settings = Settings::where('id', 1);
         $settings->increment('request');
 
@@ -54,16 +54,13 @@ class GlobalController extends Controller
         return $sites;
     }
 
-    static function version(){
+    static function version()
+    {
         $filename = '../public/build/manifest.json';
-        $ver = date ("d/m/y H:i", filemtime($filename) + 3600);
+        $ver = date('d/m/y H:i', filemtime($filename) + 3600);
         $version = $ver;
         return $version;
     }
-
-
-
-
 
     static function getallSites()
     {
@@ -163,38 +160,33 @@ class GlobalController extends Controller
     }
     function bulksaveemail(Request $request)
     {
+       
         //get the list of urls from the post request
-        $emails = $request->input('mails');
+        $adresse = $request->input('adresse');
         $secure = $request->input('secure');
         $firstname = $request->input('firstname');
         $lastname = $request->input('lastname');
         $company = $request->input('company');
         $phone = $request->input('phone');
-        $categorie = $request->input('categorie');
         $utilisateur = backpack_user()->id;
-        //split the list of emails into an array
-
-        //loop through the array of emails
-        foreach ($emails as $email) {
-            //check if the email is not empty
-            if (!empty($email)) {
-                //check if the email is not already in the database
-                if (Emails::where('adresse', $email)->doesntExist()) {
-                    //save the email in the database
-                    $site = new Emails();
-                    $site->adresse = $email;
-                    $site->secure = $secure;
-                    $site->utilisateur = $utilisateur;
-                    $site->firstname = $firstname;
-                    $site->lastname = $lastname;
-                    $site->company = $company;
-                    $site->phone = $phone;
-                    $site->categorie = $categorie;
-                    $site->save();
-                }
-            }
+        //save each row as a new email
+        foreach ($adresse as $key => $data) {
+            $email = new Emails();
+            $email->adresse = $data;
+            $email->secure = $secure;
+            $email->firstname = $firstname[$key];
+            $email->lastname = $lastname[$key];
+            $email->company = $company[$key];
+            $email->phone = $phone[$key];
+            $email->utilisateur = $utilisateur;
+            $email->save();
         }
+            $emails = Emails::where('adresse', null)->get();
+            foreach ($emails as $email) {
+                $email->delete();
+            }
+
         //redirect to the sites list
-        return redirect()->back();
+        return redirect('admin/emails');
     }
 }

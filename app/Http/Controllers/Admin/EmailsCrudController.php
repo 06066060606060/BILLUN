@@ -63,8 +63,8 @@ class EmailsCrudController extends CrudController
         CRUD::column('adresse');
         CRUD::column('firstname')->label('Nom');
         CRUD::column('lastname')->label('Prénom');
-        CRUD::column('phone')->label('Telephone');
-        CRUD::column('company');
+        CRUD::column('phone')->label('Téléphone');
+        CRUD::column('company')->label('Société');
         $this->crud->addColumn([
             'name'    => 'categorie',
             'label'   => 'Categorie',
@@ -81,7 +81,6 @@ class EmailsCrudController extends CrudController
                         return 'badge badge-info';
                     }
         
-                    return 'badge badge-default';
                 },
             ],
         ]);
@@ -116,7 +115,7 @@ class EmailsCrudController extends CrudController
         ]);
         CRUD::field('firstname')->label('Nom');
         CRUD::field('lastname')->label('Prénom');
-        CRUD::field('phone')->label('Telephone');
+        CRUD::field('phone')->label('Téléphone');
         CRUD::field('company');
         CRUD::field('adresse');
 
@@ -185,8 +184,8 @@ class EmailsCrudController extends CrudController
         CRUD::field('adresse');
         CRUD::field('firstname')->label('Nom');
         CRUD::field('lastname')->label('Prénom');
-        CRUD::field('phone')->label('Telephone');
-        CRUD::field('company');
+        CRUD::field('phone')->label('Téléphone');
+        CRUD::field('company')->label('Société');
         $this->crud->addField([
             'name'  => 'adresse', // The db column name
             'label' => 'adresse email', // Table column heading
