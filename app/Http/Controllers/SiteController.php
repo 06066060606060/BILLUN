@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Sites;
+use App\Models\Emails;
 use App\Models\Settings;
 use Illuminate\Support\Facades\Log;  //log to laravel.log
 
@@ -34,10 +35,33 @@ class SiteController extends Controller
 
     public function declareSite(Request $request)
     {
-        $uri =$request->url;
+         $uri =$request->signal;
          $out = new \Symfony\Component\Console\Output\ConsoleOutput();   //logger in terminal
-         $out->writeln("test");
-        // return response()->json(["statut" => $this->getSatutFromUri($uri)]);
+         $out->writeln($uri);
+         // if uri contain @
+            if(preg_match('/@/', $uri)){
+                if (Emails::where('adresse', $uri)->doesntExist()) {
+                    $sites = Emails::All();
+                    $sites = new Emails();
+                    $sites->adresse = $uri;
+                    $sites->secure = 0;
+                    $sites->utilisateur = 99;
+                    $sites->save();
+                  }
+            }
+            else{
+                if (Sites::where('url', $uri)->doesntExist()) {
+                    $sites = Sites::All();
+                    $sites = new Sites();
+                    $sites->url = $uri;
+                    $sites->secure = 0;
+                    $sites->utilisateur = 99;
+                    $sites->save();
+                  }
+            }
+
+
+       
     }
 
 
