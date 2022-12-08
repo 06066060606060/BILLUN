@@ -199,7 +199,7 @@ class EmailsCrudController extends CrudController
                 '0' => 'Non Sécurisé',
             ],
             'allows_null' => false,
-            'default'     => 'one',
+            'default'     => '0',
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
         $this->crud->addField(
