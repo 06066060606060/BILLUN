@@ -61,7 +61,6 @@ class EmailsCrudController extends CrudController
             ],
         ]);
         CRUD::column('adresse');
-        CRUD::column('utilisateur');
         CRUD::column('firstname')->label('Nom');
         CRUD::column('lastname')->label('Prénom');
         CRUD::column('phone')->label('Telephone');
@@ -110,13 +109,17 @@ class EmailsCrudController extends CrudController
             'adresse.unique' => 'Cette adresse email existe déja !',
         ];
         $this->crud->setValidation($rules, $messages);
-
-        CRUD::field('adresse');
         $this->crud->addField([
             'name'  => 'adresse', // The db column name
             'label' => 'adresse email', // Table column heading
             'type'  => 'email',
         ]);
+        CRUD::field('firstname')->label('Nom');
+        CRUD::field('lastname')->label('Prénom');
+        CRUD::field('phone')->label('Telephone');
+        CRUD::field('company');
+        CRUD::field('adresse');
+
         $this->crud->addField(
             [   // select_from_array
             'name'        => 'secure',
@@ -127,7 +130,7 @@ class EmailsCrudController extends CrudController
                 '0' => 'Non Sécurisé',
             ],
             'allows_null' => false,
-            'default'     => 'one',
+            'default'     => '0',
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
         $this->crud->addField(
