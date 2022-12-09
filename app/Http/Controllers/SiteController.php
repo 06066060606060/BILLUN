@@ -26,9 +26,6 @@ class SiteController extends Controller
      */
     public function controlUrl(Request $request)
     {
-
-
-        
         $uri = $this->getUri($request->url);
         return response()->json(["statut" => $this->getSatutFromUri($uri)]);
     }
