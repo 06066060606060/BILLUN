@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\API\EmailsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/Site/Control', [SiteController::class, 'controlUrl']);
 Route::post('/Site/Declare', [SiteController::class, 'declareSite']);
+Route::apiResource("/emails", EmailsController::class);

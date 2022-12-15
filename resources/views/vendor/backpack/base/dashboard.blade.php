@@ -253,7 +253,7 @@
     @if (backpack_user()->role == 'admin')
         <p class="w-full px-4 py-2 text-xs text-gray-200 bg-gray-900 rounded">
              Derniéres mise à jour:  {{ $version }}<br>
-            -Ajout colones supplémentaire table emails<br>
+            -Ajout API extension Gmail<br>
         </p>
        
     @endif
